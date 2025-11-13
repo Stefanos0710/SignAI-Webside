@@ -1,2 +1,2 @@
 # SignAI-Webside
-This is the officiall webside of SIgnAI. You can find the webside under this link: http://signai.dev/
+This is the official website of SignAI. You can visit it at https://signai.dev
