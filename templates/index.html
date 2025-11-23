@@ -1,0 +1,279 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}SignAI - Sign Language Translator{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+{% block content %}
+
+<nav id="navbar" class="navbar">
+    <div class="nav-title">SignAI</div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#desktop">Desktop</a>
+        <a href="#mobile">Mobile</a>
+        <a href="/download">Download</a>
+        <a href="/download/instructions">Instructions</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section id="home">
+    <h1>SignAI</h1>
+    <p>
+        SignAI is an innovative AI-based application that bridges the communication gap
+        between the hearing and the deaf communities. By using advanced machine learning and deep learning techniques,
+        SignAI can recognize and translate sign language in real time from any device.
+    </p>
+    <div class="hero-buttons">
+        <a href="#desktop" class="btn btn-primary">Get Started</a>
+        <a href="#about" class="btn btn-primary">Learn More</a>
+    </div>
+
+    <!-- Bubble Elements -->
+    <div class="bubble-2"></div>
+    <div class="bubble-3"></div>
+    <div class="bubble-4"></div>
+    <div class="bubble-5"></div>
+    <div class="bubble-6"></div>
+    <div class="bubble-7"></div>
+    <div class="bubble-8"></div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>About SignAI</h2>
+
+                <h3 class="about-3">Our Mission</h3>
+                <p>
+                    SignAI aims to make communication accessible for everyone. By combining advanced computer vision,
+                    deep learning architectures, and natural language processing, our AI bridges the gap between spoken
+                    and signed communication. We believe that every person deserves to be understood—regardless of
+                    language, background, or physical ability.
+                </p>
+                <p>
+                    Our long-term vision is a world where sign language is no longer a barrier. Whether in classrooms,
+                    workplaces, hospitals, or everyday interactions, SignAI seeks to provide seamless, real-time
+                    translation that empowers individuals and strengthens human connection.
+                </p>
+                <p>
+                    The first full-featured version is planned for January 2026, supporting approximately 20,000 words,
+                    advanced contextual understanding, and the ability to translate long and complex sentences with high
+                    accuracy. This release will be available on all major devices, including smartphones, tablets,
+                    laptops, and desktop systems.
+                </p>
+
+                <p style="margin-bottom:1.2em;"></p>
+                <div class="about-note">
+                    <span class="note-label">Note:</span>
+                    SignAI is still in early development and currently recognizes about 1,000 ASL words. At this stage,
+                    it translates mostly individual words rather than full sentences. As the system is still in its infancy,
+                    accuracy and vocabulary coverage are limited. Both will improve dramatically over time as the dataset grows,
+                    the model architecture evolves, and training becomes more extensive. In the near future,
+                    SignAI will be able to translate entire sentences with high accuracy. Users should therefore expect occasional inaccuracies,
+                    limited scope, and partial sentence recognition during the current prototype phase.
+                </div>
+
+                <h3 class="about-3">Advanced Technology</h3>
+                <p>
+                    Our AI is trained on tens of thousands of video samples from diverse and carefully curated datasets.
+                    Using state-of-the-art transformer models, spatio-temporal convolutional networks, LSTMs, Seq2Seq-Models, and attention
+                    mechanisms, SignAI can understand subtle hand shapes, movement transitions, and facial expressions.
+                    These components are essential features of sign languages and allow the system to capture meaning
+                    far more precisely than traditional gesture-recognition tools.
+                </p>
+                <p>
+                    The adaptive learning model is designed to recognize regional variations, personal signing styles,
+                    and different levels of signing speed. SignAI continuously improves through research, real-world
+                    usage data, and in future from user feedback. With every update, the system becomes faster, more accurate,
+                    and more capable. If you you are more interested about the technical details, visit our
+                    <a href="https://github.com/Stefanos0710/SignAI" class="about-link">Github page</a>.
+                </p>
+
+                <h3 class="about-3">Building Bridges</h3>
+                <p>
+                    Our goal goes far beyond translation. SignAI is built to support inclusive communication in
+                    education, healthcare, government services, and daily life. We want to empower individuals who rely
+                    on sign language, support interpreters, and provide hearing people with an easy way to understand
+                    and engage with the Deaf community.
+                </p>
+                <p>
+                    By breaking communication barriers, we foster equality, accessibility, and connection. SignAI is not
+                    just a tool—it is a step toward a more inclusive world where everyone can share their voice and be
+                    heard.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="desktop">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Desktop</h2>
+                <p>
+                    The desktop version of SignAI provides a powerful environment for testing, recording,
+                    and analyzing sign language. It allows users to record custom videos
+                    and instantly receive accurate translations.
+                </p>
+                <p>
+                    With our desktop application, you get access to advanced features including real-time processing,
+                    detailed analytics, and the ability to save and review your translation history.
+                    The intuitive interface makes it easy for both beginners and professionals to communicate effectively.
+                </p>
+
+                <div class="download-row">
+                    <a class="btn btn-download" href="/download#download-windows">Download for Windows</a>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    <em>macOS and Linux versions coming soon</em>
+                </p>
+
+                <p style="margin-top: 1.5rem; font-size: 1rem;">
+                    <strong>Need help getting started?</strong>
+                    Check out our detailed
+                    <a href="/download/instructions#window" class="instruction-link">installation guide for Windows</a>
+                    for step-by-step instructions.
+                </p>
+            </div>
+
+            <div class="device-container">
+                <figure class="device desktop-app-windows" data-os="win">
+                    <img src="{{ url_for('static', filename='images/desktop-app4.png') }}" alt="Desktop App Screenshot">
+                    <figcaption>Windows Desktop Application</figcaption>
+                </figure>
+
+                <figure class="device desktop-app-macos hidden" data-os="mac">
+                    <img src="{{ url_for('static', filename='images/desktop-app4.png') }}" alt="Desktop App Screenshot">
+                    <figcaption>macOS Desktop Application</figcaption>
+                </figure>
+
+                <figure class="device desktop-app-linux hidden" data-os="linux">
+                    <img src="{{ url_for('static', filename='images/desktop-app4.png') }}" alt="Desktop App Screenshot">
+                    <figcaption>Linux Desktop Application</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mobile">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Mobile</h2>
+                <p>
+                    Our mobile version of SignAI brings the power of real-time translation directly to your pocket.
+                    Using your smartphone's camera and flash, the app delivers incredible results and enables
+                    seamless communication anywhere.
+                </p>
+
+                <p>
+                    The mobile app is designed with accessibility in mind, offering a clean and simple interface
+                    that works in any lighting condition. Whether you're at home, at work, or on the go,
+                    SignAI Mobile ensures you can communicate effectively without barriers.
+                </p>
+                <p>
+                    <strong>Status:</strong> The mobile app is currently under development for both Android and iOS. Stay tuned for updates!
+                </p>
+
+
+            </div>
+
+            <div class="device-container">
+                <figure class="device mobile-app-android" data-os="android">
+                    <img src="{{ url_for('static', filename='images/mobile-app2.jpeg') }}" alt="Android App Screenshot">
+                    <figcaption>Android mobile Application</figcaption>
+                </figure>
+
+                <figure class="device mobile-app-ios hidden" data-os="ios">
+                    <img src="{{ url_for('static', filename='images/mobile-app2.jepg') }}" alt="iOS App Screenshot">
+                    <figcaption>iOS mobile Application</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Have questions, suggestions, or collaboration ideas? We'd love to hear from you!</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <p>
+                    If you have questions, feedback, or simply want to reach out,
+                    feel free to contact us anytime.
+                </p>
+                <a href="mailto:hello@signai.dev" class="btn-contact">hello@signai.dev</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>GitHub</h3>
+                <p>
+                    Explore our open-source projects, report issues,
+                    or contribute to SignAI's development.
+                </p>
+                <a href="https://github.com/Stefanos0710/SignAI/" target="_blank" class="btn-contact">Visit Repository</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Email Support</h3>
+                <p>
+                    Need help or found a bug? Reach out directly to our support team
+                    and we'll get back to you as soon as possible.
+                </p>
+                <a href="mailto:support@signai.dev" class="btn-contact">support@signai.dev</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>SignAI</h2>
+            <p>Bridging the communication gap with AI-powered sign language translation.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="/">Home</a>
+            <a href="/#about">About</a>
+            <a href="/#desktop">Desktop</a>
+            <a href="/#mobile">Mobile</a>
+            <a href="/#contact">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h3>Download</h3>
+            <a href="/download#download-window">Windows</a>
+            <a href="/download#download-mac">MacOS</a>
+            <a href="/download#download-linux">Linux</a>
+            <a href="/download#download-android">Android</a>
+            <a href="/download#download-ios">iOS</a>
+        </div>
+        <div class="footer-section">
+            <h3>Instructions</h3>
+            <a href="/download/instructions#window">Windows</a>
+            <a href="/download/instructions#macos">MacOS</a>
+            <a href="/download/instructions#linux">Linux</a>
+            <a href="/download/instructions#android">Android</a>
+            <a href="/download/instructions#ios">iOS</a>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <a href="https://github.com/Stefanos0710/SignAI" target="_blank">GitHub</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 SignAI. All rights reserved.</p>
+    </div>
+</footer>
+
+
+{% endblock %}

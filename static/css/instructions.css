@@ -1,0 +1,353 @@
+/* Instructions Page Styles */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    text-align: center;
+    padding: 8rem 5% 6rem;
+    margin-bottom: 0;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+/* Download Hero */
+.download-hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 10%;
+    background: linear-gradient(135deg, #f8f9fd 0%, #d4d5e8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-hero h1 {
+    color: #4b5cfb;
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+    position: relative;
+    z-index: 1;
+}
+
+.download-hero p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+/* Platform Selection */
+.platform-selection {
+    text-align: center;
+    margin: 50px auto;
+    padding: 40px 20px;
+}
+
+.platform-selection h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.platform-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.platform-selection .btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 140px;
+    padding: 20px 25px;
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.platform-selection .btn i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.platform-selection .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+    background: var(--background);
+    text-decoration: none;
+}
+/* Instruction Steps */
+.instruction-steps {
+    margin: 3rem 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.step {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.step:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+.step h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step p {
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    text-align: left;
+    max-width: 100%;
+}
+
+.step code {
+    background: #f0f2f5;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: var(--primary);
+    font-size: 0.95em;
+}
+
+.step ul {
+    padding-left: 20px;
+    margin-top: 1rem;
+    list-style: none;
+}
+
+.step li {
+    padding-left: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.step li::before {
+    content: "•";
+    color: var(--primary);
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -8px;
+}
+
+
+.step strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Section Styling */
+section {
+    padding: 4rem 0;
+    scroll-margin-top: 80px;
+}
+
+section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+section > .container > p {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 0 auto 2rem;
+    max-width: 700px;
+}
+
+/* App Store Section */
+.appstore-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 2px solid var(--border);
+    text-align: center;
+}
+
+.appstore-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.appstore-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-appstore {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-appstore:hover {
+    background: var(--background);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+.btn-appstore img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.btn-appstore span {
+    white-space: nowrap;
+}
+
+/* Special styles for official store badges (SVG) */
+.btn-appstore:has(img[src*=".svg"]) {
+    padding: 8px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.btn-appstore:has(img[src*=".svg"]):hover {
+    background: transparent;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-appstore:has(img[src*=".svg"]) img {
+    height: 50px;
+    width: auto;
+}
+
+/* About Section Styling */
+.about {
+    background: linear-gradient(135deg, #f8f9fd 0%, #ffffff 100%);
+    padding: 4rem 5%;
+}
+
+/* Coming Soon Section Styles */
+.coming-soon-section {
+    padding: 4rem 0;
+    scroll-margin-top: 80px;
+    background: linear-gradient(135deg, #f8f9fd 0%, #ffffff 100%);
+}
+
+.coming-soon-message {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px solid var(--border);
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+}
+
+.coming-soon-message p:not(.coming-soon-badge) {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 1rem 0;
+}
+
+.coming-soon-message a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.coming-soon-message a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
