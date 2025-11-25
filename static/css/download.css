@@ -251,16 +251,79 @@ section p {
 
 /* Responsive stacked on smaller screens */
 @media (max-width: 1024px) {
+    .download-hero {
+        padding: 3rem 6%;
+        min-height: 40vh;
+    }
+
+    .download-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    section {
+        padding: 2.5rem 4%;
+    }
+
     .desktop-downloads-container {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .download-window, .download-mac, .download-linux {
+        padding: 1.2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .desktop-downloads-container,
-    .mobile-downloads-container {
-        grid-template-columns: 1fr;
+    .download-hero {
+        padding: 2rem 4%;
+        min-height: 30vh;
     }
+
+    .download-hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .download-hero p {
+        font-size: 1rem;
+    }
+
+    .desktop-downloads-container {
+        padding: 0 2%;
+    }
+
+    .download-window, .download-mac, .download-linux {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .version-selector label, .version-selector select {
+        display: block;
+        width: 100%;
+    }
+
+    .btn-primary.download-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+
+    .about p, .download-hero p, .desktop-app-download p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-hero h1 { font-size: 1.8rem; }
+    section { padding: 1.2rem 3%; }
+    .platform-selection, .desktop-downloads-container { padding: 0 1%; }
+    .download-window .instruction-note { font-size: 0.95rem; }
 }
 
 /* Version Selector */

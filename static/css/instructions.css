@@ -351,3 +351,51 @@ section > .container > p {
     color: var(--accent);
     text-decoration: underline;
 }
+
+/* Mobile tweaks to avoid zoomed-out view and overflow */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 5rem 6% 3.5rem;
+    }
+
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1.05rem; max-width: 90%; }
+
+    .download-hero { padding: 3rem 6%; }
+    .download-hero h1 { font-size: 3rem; }
+
+    section { padding: 2.2rem 4%; }
+
+    section .container { padding: 0 4%; }
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 3.2rem 4rem 2.4rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+
+    .platform-selection { padding: 20px 8px; }
+    .platform-selection .btn { min-width: 120px; padding: 14px 16px; }
+
+    .instruction-steps { margin: 1.5rem 0; gap: 1rem; }
+    .step { padding: 1rem; }
+    .step h3 { font-size: 1.15rem; }
+    .step p, .step li { font-size: 0.98rem; }
+
+    section .container { padding: 0 3%; }
+}
+
+@media (max-width: 480px) {
+    .hero { padding: 2.2rem 3%; }
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 0.95rem; }
+
+    .platform-selection .btn { min-width: 100px; padding: 10px 12px; font-size: 0.95rem; }
+    .step { padding: 0.8rem; }
+    .step h3 { font-size: 1rem; }
+    .step p, .step li { font-size: 0.95rem; }
+
+    section { padding: 1rem 3%; }
+}
+
+/* End of responsive tweaks */

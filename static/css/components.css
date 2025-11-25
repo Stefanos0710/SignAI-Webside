@@ -148,8 +148,53 @@
 }
 
 @media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    /* Center platform switch and make buttons slightly larger/tappable */
+    .platform-switch {
+        justify-content: center;
+        gap: 12px;
+        margin: 16px 0;
+    }
+
+    .platform {
+        padding: 12px 18px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    /* Make download buttons stack and become full-width where appropriate */
+    .download-row {
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-download {
+        padding: 12px 18px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    /* Center contact cards and text for better mobile readability */
+    .contact-card {
+        text-align: center;
+        padding: 1.6rem 1.2rem;
+    }
+
+    .contact-card p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .platform {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .btn-download {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
     }
 }

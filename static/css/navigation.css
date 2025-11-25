@@ -42,3 +42,86 @@ nav.scrolled {
     background: rgba(248, 249, 252, 0.7);
 }
 
+/* Hamburger / collapsed menu styles */
+.nav-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.nav-toggle:focus {
+    outline: 2px solid rgba(75,92,251,0.18);
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+
+/* When open, rotate lines into an X */
+.nav-toggle.open .hamburger { background: transparent; }
+.nav-toggle.open .hamburger::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open .hamburger::after { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: center;
+        padding: 0.8rem 4%;
+    }
+
+    .nav-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.6rem;
+        padding: 0.8rem 0;
+        text-align: center;
+    }
+
+    /* When the menu is open, show links as vertical list */
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 8px 12px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .nav-toggle { display: inline-flex; }
+}
