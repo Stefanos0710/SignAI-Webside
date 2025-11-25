@@ -24,6 +24,19 @@ nav {
     color: var(--primary);
 }
 
+/* Make the nav title itself a link look like a logo/title */
+.nav-title a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 760;
+    display: inline-block;
+}
+
+.nav-title a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
 .nav-links a {
     color: #4b5cfb;
     text-decoration: none;
