@@ -6,7 +6,7 @@ const repoName = 'Stefanos0710/SignAI';
 function addManualVersions(dropdownId) {
     const dropdown = document.getElementById(dropdownId);
     if (!dropdown) return;
-    const manualTags = ['v1.0.0', 'v0.3.0-beta', 'v0.1.0-alpha'];
+    const manualTags = ["v1.1.0", 'v1.0.0', 'v0.3.0-beta', 'v0.1.0-alpha'];
     dropdown.innerHTML = '';
     manualTags.forEach((tag, idx) => {
         const option = document.createElement('option');
