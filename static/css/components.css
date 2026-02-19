@@ -82,9 +82,6 @@
 }
 
 /* Contact Section */
-#contact {
-    background: linear-gradient(135deg, #f8f9fd 0%, #e9ecf1 100%);
-}
 
 .contact-grid {
     display: grid;

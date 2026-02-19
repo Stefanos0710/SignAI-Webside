@@ -54,8 +54,26 @@ a:hover {
 
 /* Sections */
 section {
-    padding: 4rem 0;
+    padding: 5rem 0;
     scroll-margin-top: 70px;
+    position: relative;
+}
+
+/* Alternating section backgrounds for visual separation */
+#about {
+    background: var(--surface);
+}
+
+#desktop {
+    background: #eaecf5;
+}
+
+#mobile {
+    background: var(--surface);
+}
+
+#contact {
+    background: #eaecf5;
 }
 
 .container {

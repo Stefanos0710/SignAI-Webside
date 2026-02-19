@@ -1,7 +1,4 @@
 /* Mobile Section */
-#mobile {
-    background: linear-gradient(135deg, #f8f9fd 0%, #e9ecf1 100%);
-}
 
 #mobile .hero-content {
     display: flex;
