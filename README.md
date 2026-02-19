@@ -6,6 +6,8 @@ Product website: https://signai.dev
 
 Original repository: https://github.com/Stefanos0710/SignAI
 
+<a href="https://www.seobility.net/de/seocheck/check?url=https%3A%2F%2Fwww.signai.dev%2F"><img src="https://app.seobility.net/widget/widget.png?url=https%3A%2F%2Fwww.signai.dev%2F" alt="Seobility Score für signai.dev"></a>
+
 ## What is in this repo
 - `static/` — CSS, JavaScript and images used by the site
 - `templates/` — HTML templates for the pages
