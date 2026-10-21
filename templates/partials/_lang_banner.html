@@ -1,0 +1,15 @@
+{# Suggests the visitor's browser language when it differs from the page language. Shown by JS only; never redirects. #}
+{%- if alternates %}
+{%- set offers = {} %}
+{%- for code, meta in languages if code != lang %}
+{%- for alt_code, href in alternates if alt_code == code %}
+{%- set _ = offers.update({code: {"text": meta.banner, "link": meta.banner_link, "href": href | replace(SITE_URL, "")}}) %}
+{%- endfor %}
+{%- endfor %}
+<div class="lang-banner" hidden data-offers='{{ offers | tojson }}'>
+    <div class="container lang-banner-inner">
+        <p><span class="lang-banner-text"></span> <a class="lang-banner-link" href="#"></a></p>
+        <button class="lang-banner-close" type="button" aria-label="{{ L.common.dismiss }}">&times;</button>
+    </div>
+</div>
+{%- endif %}

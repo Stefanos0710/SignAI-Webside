@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "partials/_icons.html" import icon %}
+{% set N = L.notfound %}
+
+{% block title %}{{ N.title }}{% endblock %}
+{% block description %}{{ N.description }}{% endblock %}
+{% block robots %}noindex, follow{% endblock %}
+{% block canonical_link %}{% endblock %}
+
+{% block content %}
+<section class="hero hero-dark hero-center hero-full" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+        <p class="eyebrow eyebrow-light">{{ N.eyebrow }}</p>
+        <h1 id="hero-title" class="display">{{ N.h1 | safe }}</h1>
+        <p class="lead">{{ N.lead }}</p>
+        <div class="btn-row btn-row-center">
+            <a class="btn btn-light" href="{{ page_url('home', lang) }}">{{ N.cta_primary }}</a>
+            <a class="btn btn-ghost-light" href="{{ page_url('home', lang) }}#updates">{{ icon('bell') }} {{ N.cta_secondary }}</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

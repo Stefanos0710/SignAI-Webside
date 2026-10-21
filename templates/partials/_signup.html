@@ -1,0 +1,46 @@
+{# "Notify me" sign-up. Posts to /api/subscribe; falls back to a pre-filled email when storage isn't configured. #}
+{% from "partials/_icons.html" import icon %}
+{% set S = L.signup %}
+<section class="section signup-section" id="updates" aria-labelledby="updates-title">
+    <div class="container">
+        <div class="signup">
+            <div class="signup-copy">
+                <p class="eyebrow eyebrow-light">{{ S.eyebrow }}</p>
+                <h2 id="updates-title" class="h2">{{ S.title }}</h2>
+                <p class="signup-lead">{{ S.lead }}</p>
+                <ul class="signup-perks" role="list">
+                    {%- for perk in S.perks %}
+                    <li>{{ icon('check') }} {{ perk }}</li>
+                    {%- endfor %}
+                </ul>
+            </div>
+            <form class="signup-form" action="/api/subscribe" method="post" novalidate
+                  data-lang="{{ lang }}" data-source="{{ page }}"
+                  data-msg-sending="{{ S.sending }}" data-msg-email="{{ S.error_email }}" data-msg-consent="{{ S.error_consent }}"
+                  data-msg-error="{{ S.error_generic }}" data-msg-fallback="{{ S.fallback }}"
+                  data-mail-subject="{{ S.mail_subject }}" data-mail-body="{{ S.mail_body }}">
+                <div class="field">
+                    <label for="signup-email">{{ S.email_label }}</label>
+                    <div class="signup-row">
+                        <input id="signup-email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="{{ S.email_placeholder }}">
+                        <button class="btn btn-light" type="submit">{{ icon('bell') }} <span class="btn-label">{{ S.button }}</span></button>
+                    </div>
+                </div>
+                <div class="field field-hp" aria-hidden="true">
+                    <label for="signup-company">Company</label>
+                    <input id="signup-company" name="company" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <label class="consent">
+                    <input type="checkbox" name="consent" value="1" required>
+                    <span class="check-box" aria-hidden="true">{{ icon('check') }}</span>
+                    <span>{{ S.consent }}</span>
+                </label>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <div class="form-success" hidden>
+                    <span class="form-success-icon">{{ icon('check') }}</span>
+                    <p><strong>{{ S.success_title }}</strong> {{ S.success }}</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

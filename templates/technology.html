@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% from "partials/_icons.html" import icon, github %}
+{% from "partials/_faq.html" import breadcrumb_schema with context %}
+{% set T = L.technology %}
+
+{% block title %}{{ T.title }}{% endblock %}
+{% block description %}{{ T.description }}{% endblock %}
+{% block og_title %}{{ T.og_title }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block body_class %}page-technology{% endblock %}
+{% block structured_data %}{{ breadcrumb_schema(T.crumb) }},
+{
+  "@type": "TechArticle",
+  "@id": "{{ SITE_URL }}{{ request.path }}#article",
+  "headline": {{ T.og_title | tojson }},
+  "description": {{ T.description | tojson }},
+  "inLanguage": "{{ lang }}",
+  "dateModified": "{{ last_updated.isoformat() }}",
+  "author": { "@id": "{{ SITE_URL }}/#organization" },
+  "publisher": { "@id": "{{ SITE_URL }}/#organization" },
+  "mainEntityOfPage": { "@id": "{{ SITE_URL }}{{ request.path }}#webpage" },
+  "image": "{{ SITE_URL }}{{ url_for('static', filename='img/og-signai-' + lang + '.png') }}",
+  "about": ["Sign language recognition", "German Sign Language", "Computer vision", "Deep learning"]
+}{% endblock %}
+
+{% block preload %}
+    <link rel="preload" href="{{ asset('data/rest.json') }}" as="fetch" crossorigin>
+    <link rel="preload" href="{{ asset('data/signer-1.json') }}" as="fetch" crossorigin>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero hero-dark hero-compact" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ page_url('home', lang) }}">{{ L.common.home }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ T.crumb }}</span></nav>
+            <h1 id="hero-title" class="display">{{ T.h1 | safe }}</h1>
+            <p class="lead">{{ T.lead }}</p>
+            <div class="btn-row">
+                <a class="btn btn-light" href="#updates">{{ icon('bell') }} {{ L.nav.cta }}</a>
+                <a class="btn btn-ghost-light" href="https://github.com/Stefanos0710/SignAI" rel="noopener" target="_blank">{{ github() }} GitHub</a>
+            </div>
+            <ul class="hero-meta" role="list">
+                {%- set meta_icons = ['layers', 'database', 'captions'] %}
+                {%- for item in T.hero_meta %}
+                <li>{{ icon(meta_icons[loop.index0]) }} {{ item }}</li>
+                {%- endfor %}
+            </ul>
+        </div>
+        <div class="hero-visual">
+            {#- Same live demo as the home hero; its source footnotes live on the home page #}
+            {%- set D = L.home.demo %}
+            <figure class="demo">
+                {%- set clips = [] %}
+                {%- for n in range(1, 11) %}{% set _ = clips.append(asset('data/signer-%d.json' % n)) %}{% endfor %}
+                <div class="demo-bar">
+                    <span class="demo-dot" aria-hidden="true"></span>
+                    <span class="demo-title">{{ D.title }}</span>
+                    <span class="demo-tag">{{ D.live }}</span>
+                    <span class="demo-pair">{{ D.pair }}</span>
+                </div>
+                <div class="demo-frame" data-rest="{{ asset('data/rest.json') }}" data-signer='{{ clips | tojson }}' data-texts='{{ D.texts | tojson }}' data-errors='{{ D.errors | tojson }}' data-timing='{{ D.timing | tojson }}'>
+                    {% include "partials/_signer.svg" %}
+                    <canvas class="signer-canvas" width="400" height="340" aria-hidden="true"></canvas>
+                    <p class="demo-caption is-shown is-final"><span>{{ D.texts[0] }}</span></p>
+                </div>
+                <figcaption class="demo-note">{{ D.note | replace("href='#", "href='" ~ page_url('home', lang) ~ "#") | safe }}</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="pipeline" aria-labelledby="pipeline-title">
+    <div class="container">
+        <div class="section-head split-head">
+            <h2 id="pipeline-title" class="h2">{{ T.pipeline.title }}</h2>
+            <p class="section-lead">{{ T.pipeline.lead }}</p>
+        </div>
+        <ol class="steps steps-5" role="list">
+            {%- for p in T.pipeline.steps %}
+            <li class="step">
+                <span class="step-num">{{ '%02d' % loop.index }}</span>
+                <h3 class="h4">{{ p.title }}</h3>
+                <p>{{ p.text }}</p>
+            </li>
+            {%- endfor %}
+        </ol>
+        <figure class="photo photo-wide pipeline-photo" data-reveal>
+            <video src="{{ asset('video/signing-tablet-call.mp4') }}" poster="{{ asset('img/photos/signing-tablet-call.webp') }}" width="1280" height="720" muted loop playsinline preload="none" data-autoplay aria-label="{{ T.pipeline.photo_alt }}"></video>
+        </figure>
+    </div>
+</section>
+
+<section class="section section-tint" id="model" aria-labelledby="model-title">
+    <div class="container">
+        <div class="section-head split-head split-head-top">
+            <h2 id="model-title" class="h2">{{ T.model.title }}</h2>
+            <div>
+                <p>{{ T.model.lead }}</p>
+            </div>
+        </div>
+        <div class="stream-cards" data-reveal>
+            {%- for s in T.model.streams %}
+            <article class="card">
+                <div class="card-top"><span class="card-icon">{{ icon(s.icon) }}</span><span class="dim">{{ s.dim }}</span></div>
+                <h3 class="h4">{{ s.title }}</h3>
+                <p>{{ s.text }}</p>
+            </article>
+            {%- endfor %}
+        </div>
+        <div class="fusion-bar" data-reveal>
+            <span class="fusion-icon">{{ icon('layers') }}</span>
+            <p><strong>{{ T.model.fusion_strong }}</strong> {{ T.model.fusion }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="translation" aria-labelledby="translation-title">
+    <div class="container split">
+        <div class="split-copy">
+            <h2 id="translation-title" class="h2">{{ T.translation.title }}</h2>
+            <p>{{ T.translation.p1 }}</p>
+            <p>{{ T.translation.p2 }}</p>
+            <p>{{ T.translation.p3 }}</p>
+        </div>
+        <div class="split-visual">
+            <div class="flow-card" data-reveal role="img" aria-label="{{ T.translation.code_aria }}">
+                <p class="code-title">{{ T.translation.code_title }}</p>
+                <ol class="flow">
+                    <li class="flow-step">
+                        <span class="flow-label">{{ T.translation.flow_signs }}</span>
+                        <div class="flow-signs">{% for n in range(3) %}<span class="flow-sign">{{ icon('hand') }}</span>{% endfor %}</div>
+                    </li>
+                    <li class="flow-step">
+                        <span class="flow-label">{{ T.translation.flow_glosses }}</span>
+                        <div class="flow-chips"><span>MORGEN</span><span>REGEN</span><span>NORD</span></div>
+                    </li>
+                    <li class="flow-step flow-final">
+                        <span class="flow-label">{{ T.translation.flow_sentence }} <em>{{ T.translation.flow_next }}</em></span>
+                        <p class="flow-out">“{{ T.translation.code_output }}”</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark" id="data" aria-labelledby="data-title">
+    <div class="container">
+        <div class="section-head split-head">
+            <h2 id="data-title" class="h2">{{ T.data.title }}</h2>
+            <p class="section-lead">{{ T.data.lead }}</p>
+        </div>
+        <div class="cards cards-2 cards-on-dark">
+            {%- for c in T.data.cards %}
+            <article class="card card-dark">
+                <span class="card-icon">{{ icon(c.icon) }}</span>
+                <h3 class="h4">{{ c.title }}</h3>
+                <p>{{ c.text }}</p>
+            </article>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" id="research" aria-labelledby="research-title">
+    <div class="container">
+        <div class="section-head">
+            <h2 id="research-title" class="h2">{{ T.research.title }}</h2>
+        </div>
+        <div class="features">
+            {%- for f in T.research['items'] %}
+            <div class="feature">
+                <span class="feature-icon">{{ icon(f.icon) }}</span>
+                <h3 class="h5">{{ f.title }}</h3>
+                <p>{{ f.text }}</p>
+            </div>
+            {%- endfor %}
+        </div>
+        <div class="stack" data-reveal>
+            <p class="stack-label">{{ T.research.stack_label }}</p>
+            <ul role="list">
+                <li>Python</li><li>TensorFlow</li><li>Keras</li><li>PyTorch</li><li>MediaPipe</li><li>DINOv3</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section section-tint" aria-labelledby="open-title">
+    <div class="container">
+        <div class="banner" data-reveal>
+            <div>
+                <h2 id="open-title" class="h3">{{ T.open.title }}</h2>
+                <p>{{ T.open.text }}</p>
+            </div>
+            <div class="btn-row">
+                <a class="btn btn-primary" href="mailto:hello@signai.dev?subject=Research%20collaboration">{{ T.open.cta }}</a>
+                <a class="btn btn-secondary" href="https://github.com/Stefanos0710/SignAI" rel="noopener" target="_blank">{{ github() }} {{ T.open.github }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "partials/_signup.html" %}
+
+{% endblock %}

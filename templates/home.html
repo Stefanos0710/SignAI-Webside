@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% from "partials/_icons.html" import icon, github %}
+{% from "partials/_faq.html" import faq_list, faq_schema with context %}
+{% set H = L.home %}
+
+{% block title %}{{ H.title }}{% endblock %}
+{% block description %}{{ H.description }}{% endblock %}
+{% block og_title %}{{ H.og_title }}{% endblock %}
+{% block body_class %}page-home{% endblock %}
+{% block structured_data %}{{ faq_schema(H.faq['items']) }}{% endblock %}
+{# The hero demo's first clip loads with the page instead of after main.js runs #}
+{% block preload %}
+    <link rel="preload" href="{{ asset('data/rest.json') }}" as="fetch" crossorigin>
+    <link rel="preload" href="{{ asset('data/signer-1.json') }}" as="fetch" crossorigin>
+{% endblock %}
+
+{% block content %}
+
+{# ───────────── Hero ───────────── #}
+<section class="hero hero-dark hero-full" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <h1 id="hero-title" class="display">{{ H.h1 | safe }}</h1>
+            <p class="lead">{{ H.lead }}</p>
+            <div class="btn-row">
+                <a class="btn btn-light" href="#updates">{{ icon('bell') }} {{ H.cta_primary }}</a>
+                <a class="btn btn-ghost-light" href="{{ page_url('technology', lang) }}">{{ H.cta_secondary }}</a>
+            </div>
+            <ul class="hero-meta" role="list">
+                {%- set meta_icons = ['languages', 'camera', 'shield'] %}
+                {%- for item in H.hero_meta %}
+                <li>{{ icon(meta_icons[loop.index0]) }} {{ item }}</li>
+                {%- endfor %}
+            </ul>
+        </div>
+        <div class="hero-visual">
+            <figure class="demo">
+                {%- set clips = [] %}
+                {%- for n in range(1, 11) %}{% set _ = clips.append(asset('data/signer-%d.json' % n)) %}{% endfor %}
+                <div class="demo-bar">
+                    <span class="demo-dot" aria-hidden="true"></span>
+                    <span class="demo-title">{{ H.demo.title }}</span>
+                    <span class="demo-tag">{{ H.demo.live }}</span>
+                    <span class="demo-pair">{{ H.demo.pair }}</span>
+                </div>
+                <div class="demo-frame" data-rest="{{ asset('data/rest.json') }}" data-signer='{{ clips | tojson }}' data-texts='{{ H.demo.texts | tojson }}' data-errors='{{ H.demo.errors | tojson }}' data-timing='{{ H.demo.timing | tojson }}'>
+                    {% include "partials/_signer.svg" %}
+                    <canvas class="signer-canvas" width="400" height="340" aria-hidden="true"></canvas>
+                    <p class="demo-caption is-shown is-final"><span>{{ H.demo.texts[0] }}</span></p>
+                </div>
+                <figcaption class="demo-note">{{ H.demo.note | safe }}</figcaption>
+            </figure>
+        </div>
+    </div>
+    <a class="scroll-hint" href="#why" aria-label="{{ H.scroll }}">{{ icon('chevron') }}</a>
+</section>
+
+{# ───────────── Recognition ───────────── #}
+<section class="recognition" aria-label="{{ H.featured }}">
+    <div class="container recognition-row">
+        <div class="award">
+            <span class="award-mark" aria-hidden="true">{{ H.award_mark | safe }}</span>
+            <p><strong>{{ H.award_title }}</strong><span>{{ H.award_sub }}</span></p>
+        </div>
+        {%- set press = [
+                ("sueddeutsche.svg", "Süddeutsche Zeitung", "https://www.sueddeutsche.de/muenchen/landkreismuenchen/ismaning-gymnasium-jugend-forscht-ki-gebaerdensprache-li.3475266"),
+                ("kultusministerium.svg", "Bayerisches Staatsministerium für Unterricht und Kultus", "https://www.km.bayern.de/meldung/forschen-auf-champions-league-niveau"),
+                ("jugend-forscht-bayern.svg", "Jugend forscht Bayern", "https://www.jugend-forscht-bayern.de/projekte/anzeigen/signai-gebaerdensprachen-uebersetzer/"),
+                ("uni-regensburg.svg", "Universität Regensburg", "https://www.uni-regensburg.de/universitaet/mint/jugend-forscht/landeswettbewerb"),
+                ("flughafen-muenchen.svg", "Flughafen München", "https://www.munich-airport.de/presse-22-regionalwettbewerb-jugend-forscht-am-muenchner-airport-30607295"),
+                ("gymnasium-ismaning.png", "Gymnasium Ismaning", "https://gymnasiumismaning.de/landessieg-fuer-mathematik-informatik-fuer-stefanos-bei-jugend-forscht-junior/"),
+        ] %}
+        <div class="press-row">
+            <p class="recognition-label">{{ H.featured }}</p>
+            <div class="press-marquee">
+                <ul class="press-list" role="list">
+                    {%- for dup in (false, true) %}
+                    {%- for p in press %}
+                    <li{% if dup %} class="press-dup" aria-hidden="true"{% endif %}><a href="{{ p[2] }}" rel="noopener" target="_blank"{% if dup %} tabindex="-1"{% endif %}><img src="{{ url_for('static', filename='img/press/' ~ p[0]) }}" alt="{{ p[1] }}" decoding="async"></a></li>
+                    {%- endfor %}
+                    {%- endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ───────────── Why ───────────── #}
+<section class="section" id="why" aria-labelledby="why-title">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <h2 id="why-title" class="h2">{{ H.why.title }}</h2>
+            <p class="section-lead">{{ H.why.lead }}</p>
+        </div>
+        <div class="stats" data-reveal>
+            {%- for stat in H.why.stats %}
+            <div class="stat">
+                <p class="stat-num" data-count>{{ stat.num }}</p>
+                <p class="stat-label">{{ stat.label }}<sup><a href="#source-{{ loop.index }}">{{ loop.index }}</a></sup></p>
+            </div>
+            {%- endfor %}
+        </div>
+        <figure class="photo photo-wide why-photo" data-reveal>
+            <img src="{{ asset('img/photos/signing-cafe.webp') }}" width="1800" height="1200" alt="{{ H.why.photo_alt }}" loading="lazy" decoding="async">
+        </figure>
+    </div>
+</section>
+
+{# ───────────── Mission ───────────── #}
+<section class="section section-tint" id="mission" aria-labelledby="mission-title">
+    <div class="container">
+        <div class="section-head split-head split-head-top">
+            <h2 id="mission-title" class="h2">{{ H.mission.title }}</h2>
+            <div>
+                <p>{{ H.mission.text }}</p>
+            </div>
+        </div>
+        {# Bento: photo tile on the left over two rows, the three points and a CTA tile around it #}
+        <div class="mission-points">
+            <figure class="photo mission-photo" data-reveal>
+                <img src="{{ asset('img/photos/signing-outdoors.webp') }}" width="1800" height="1200" alt="{{ H.mission.photo_alt }}" loading="lazy" decoding="async">
+            </figure>
+            {%- for point in H.mission.points %}
+            <div class="mission-point{% if loop.index == 2 %} mission-point-accent{% endif %}">
+                <span class="flow-icon">{{ icon(point.icon) }}</span>
+                <h3 class="h5">{{ point.title }}</h3>
+                <p>{{ point.text }}</p>
+            </div>
+            {%- endfor %}
+            <a class="mission-point mission-cta" href="#updates">
+                <span class="flow-icon">{{ icon('bell') }}</span>
+                <span class="h5">{{ H.mission.cta }}</span>
+                <span class="mission-cta-arrow">{{ icon('arrow') }}</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+{# ───────────── How it works ───────────── #}
+<section class="section" id="how" aria-labelledby="how-title">
+    <div class="container split how-split">
+        <div>
+            <div class="section-head">
+                <h2 id="how-title" class="h2">{{ H.how.title }}</h2>
+            </div>
+            <ol class="steps steps-2" role="list">
+                {%- for step in H.how.steps %}
+                <li class="step">
+                    <span class="step-num">{{ '%02d' % loop.index }}</span>
+                    <h3 class="h4">{{ step.title }}</h3>
+                    <p>{{ step.text }}</p>
+                </li>
+                {%- endfor %}
+            </ol>
+        </div>
+        <figure class="photo how-photo" data-reveal>
+            <video src="{{ asset('video/signing-video-call.mp4') }}" poster="{{ asset('img/photos/signing-video-call.webp') }}" width="1280" height="676" muted loop playsinline preload="none" data-autoplay aria-label="{{ H.how.photo_alt }}"></video>        </figure>
+    </div>
+</section>
+
+{# ───────────── Technology ───────────── #}
+<section class="section section-dark" id="technology" aria-labelledby="tech-title">
+    <div class="container">
+        <div class="split">
+            <div class="split-copy">
+                <h2 id="tech-title" class="h2">{{ H.tech.title }}</h2>
+                <p>{{ H.tech.text }}</p>
+                <a class="btn btn-ghost-light" href="{{ page_url('technology', lang) }}">{{ H.tech.cta }}</a>
+            </div>
+            <div class="streams">
+                {%- for s in H.tech.streams %}
+                <div class="stream{% if loop.last %} stream-fusion{% endif %}">
+                    <span class="stream-icon">{{ icon(s.icon) }}</span>
+                    <div><h3 class="h5">{{ s.title }}</h3><p>{{ s.text }}</p></div>
+                </div>
+                {%- endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ───────────── Principles ───────────── #}
+<section class="section" id="principles" aria-labelledby="principles-title">
+    <div class="container">
+        <div class="section-head">
+            <h2 id="principles-title" class="h2">{{ H.principles.title }}</h2>
+        </div>
+        <div class="principles">
+            {%- for p in H.principles['items'] %}
+            <div class="principle">
+                <span class="principle-icon">{{ icon(p.icon) }}</span>
+                <h3 class="h5">{{ p.title }}</h3>
+                <p>{{ p.text }}</p>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+{# ───────────── Roadmap ───────────── #}
+<section class="section section-tint" id="roadmap" aria-labelledby="roadmap-title">
+    <div class="container">
+        {#- main.js pins .tl-stage while you scroll through .tl-track and moves the steps past it (see "Timeline" in site.css) #}
+        <div class="tl-track" style="--n: {{ H.roadmap['items'] | length }}">
+            <div class="tl-stage">
+                <div class="section-head tl-head">
+                    <h2 id="roadmap-title" class="h2">{{ H.roadmap.title }}</h2>
+                    <p class="tl-count" aria-hidden="true">
+                        <span class="tl-odo">{% for item in H.roadmap['items'] %}<span>{{ '%02d' % loop.index }}</span>{% endfor %}</span>
+                        <span class="tl-of">/ {{ '%02d' % (H.roadmap['items'] | length) }}</span>
+                    </p>
+                </div>
+                <ol class="timeline" role="list">
+                    {%- for item in H.roadmap['items'] %}
+                    <li class="tl-item is-{{ item.state }}">
+                        <div class="tl-body">
+                            <p class="tl-date">{{ item.date }}</p>
+                            <h3 class="h5 tl-title">{{ item.title }}</h3>
+                            <p class="tl-text">{{ item.text }}{% if item.cta %} <a class="tl-link" href="#updates">{{ item.cta }} {{ icon('arrow') }}</a>{% endif %}</p>
+                        </div>
+                    </li>
+                    {%- endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ───────────── Work with us ───────────── #}
+<section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+        <div class="section-head split-head">
+            <h2 id="contact-title" class="h2">{{ H.work.title }}</h2>
+            <p class="section-lead">{{ H.work.lead }}</p>
+        </div>
+        <figure class="photo photo-wide work-photo" data-reveal>
+            <img src="{{ asset('img/photos/signing-table.webp') }}" width="1800" height="1200" alt="{{ H.work.photo_alt }}" loading="lazy" decoding="async">
+        </figure>
+        <div class="cards cards-3 work-cards">
+            {%- for c in H.work.cards %}
+            <article class="card">
+                <span class="card-icon">{{ icon(c.icon) }}</span>
+                <h3 class="h4">{{ c.title }}</h3>
+                <p>{{ c.text }}</p>
+                <a class="card-link" href="mailto:hello@signai.dev?subject={{ c.subject | urlencode }}">{{ c.link }} {{ icon('arrow') }}</a>
+            </article>
+            {%- endfor %}
+        </div>
+        <div class="contact-row contact-row-light">
+            <a href="mailto:hello@signai.dev">{{ icon('mail') }} hello@signai.dev</a>
+            <a href="mailto:support@signai.dev">{{ icon('message') }} support@signai.dev</a>
+            <a href="https://github.com/Stefanos0710/SignAI" rel="noopener" target="_blank">{{ github() }} GitHub</a>
+        </div>
+    </div>
+</section>
+
+{# ───────────── FAQ ───────────── #}
+<section class="section section-faq section-tint" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+        <div class="section-head">
+            <h2 id="faq-title" class="h2">{{ H.faq.title }}</h2>
+            <p class="section-lead">{{ H.faq.lead | safe }}</p>
+            <a class="btn btn-primary faq-cta" href="#updates">{{ icon('bell') }} {{ L.nav.cta }}</a>
+        </div>
+        {{ faq_list(H.faq['items']) }}
+    </div>
+</section>
+
+{# ───────────── Sign-up (final call to action) ───────────── #}
+{% include "partials/_signup.html" %}
+
+<section class="sources section-tint" id="sources" aria-labelledby="sources-title">
+    <div class="container sources-inner">
+        <h2 id="sources-title" class="sources-title">{{ H.sources_title }}</h2>
+        <div>
+            <ol class="sources-list">
+                {%- for s in H.sources %}
+                <li id="source-{{ loop.index }}">{{ s | safe }}</li>
+                {%- endfor %}
+            </ol>
+            <p class="sources-credit">{{ H.photo_credit | safe }}</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

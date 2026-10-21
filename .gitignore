@@ -6,6 +6,7 @@
 !/requirements.txt
 !/static/
 !/templates/
+!/i18n/
 
 /.idea/
 
@@ -15,3 +16,4 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+tools/.clip-cache/

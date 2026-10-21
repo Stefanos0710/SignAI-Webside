@@ -1,0 +1,387 @@
+{
+  "meta": {
+    "lang": "en",
+    "locale": "en_US",
+    "name": "English",
+    "short": "EN",
+    "banner": "This page is also available in English.",
+    "banner_link": "Switch to English"
+  },
+  "common": {
+    "skip": "Skip to content",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
+    "language": "Language",
+    "home": "Home",
+    "dismiss": "Dismiss",
+    "cookie_text": "We use Google Analytics cookies to improve this site.",
+    "cookie_accept": "Accept",
+    "cookie_decline": "Decline",
+    "cookie_settings": "Cookie settings",
+    "org_description": "SignAI develops artificial intelligence that recognizes sign language from ordinary video and translates it into text, starting with German Sign Language (DGS).",
+    "og_alt": "SignAI: sign language, understood in real time."
+  },
+  "nav": {
+    "mission": "Mission",
+    "technology": "Technology",
+    "roadmap": "Roadmap",
+    "collaborate": "Collaborate",
+    "faq": "FAQ",
+    "cta": "Get updates"
+  },
+  "footer": {
+    "tagline": "AI that reads sign language and writes it out as text, so Deaf and hearing people can understand each other without waiting for an interpreter.",
+    "col_signai": "SignAI",
+    "col_research": "Research",
+    "col_contact": "Contact",
+    "col_language": "Language",
+    "mission": "Mission",
+    "roadmap": "Roadmap",
+    "downloads": "Downloads",
+    "updates": "Get updates",
+    "technology": "Technology",
+    "data": "Data & evaluation",
+    "github": "Source code on GitHub",
+    "partnerships": "Partnerships",
+    "press": "Press",
+    "support": "Support",
+    "rights": "All rights reserved.",
+    "made_in": "Made in Germany"
+  },
+  "signup": {
+    "eyebrow": "Stay informed",
+    "title": "Be the first to know.",
+    "lead": "We’ll email you when SignAI launches, and now and then when the research hits a milestone. Nothing else.",
+    "email_label": "Email address",
+    "email_placeholder": "you@example.com",
+    "consent": "I agree that SignAI may store my email address to send me news about the launch and updates. I can unsubscribe at any time.",
+    "button": "Notify me",
+    "sending": "Sending…",
+    "success_title": "You’re on the list.",
+    "success": "Thanks. We’ll write when there’s something to tell.",
+    "error_email": "Please enter a valid email address.",
+    "error_consent": "Please confirm that we may store your email address.",
+    "error_generic": "Something went wrong. Please try again, or write to hello@signai.dev.",
+    "fallback": "Your email app will open with the message already written. Just press send.",
+    "mail_subject": "Notify me when SignAI launches",
+    "mail_body": "Please notify me when SignAI launches.",
+    "perks": ["Launch announcement", "Early access invitations", "Research milestones"]
+  },
+  "home": {
+    "title": "SignAI — AI Sign Language Translator | Sign Language to Text",
+    "description": "SignAI builds AI that recognizes sign language from an ordinary camera and turns it into text. Starting with German Sign Language (DGS).",
+    "og_title": "SignAI — Sign language, understood in real time",
+    "h1": "Sign language, understood in <em>real&nbsp;time.</em>",
+    "lead": "SignAI watches sign language through an ordinary camera and writes out what was signed. We’re starting with German Sign Language and building toward products for the everyday conversations where no interpreter is around.",
+    "cta_primary": "Notify me at launch",
+    "cta_secondary": "Explore the technology",
+    "scroll": "Scroll for more",
+    "hero_meta": ["German Sign Language", "Any camera", "Private by design"],
+    "demo": {
+      "title": "Live captions",
+      "live": "Concept",
+      "pair": "DGS → English",
+      "texts": ["By the way, that’s our studio – that’s where I’m standing right now.", "Just stay cool!", "So anyone still on holiday is going to break a sweat.", "And we’re still about three thousand kilometres away from a proper winter.", "Hang on, I’d like to say something about that.", "Constant rain and only six to eight degrees – what a day. From here it can really only get better.", "Happy birthday!", "And then autumn arrives: it begins tomorrow morning at 5:09 – officially, by the calendar.", "Oh, now I get it!", "How are you?"],
+      "errors": [[["studio", "TV", "next"], ["standing", "sitting", "end"]], [], [["holiday", "leave", "next"]], [["thousand", "hundred", "next"], ["winter.", "snow.", "end"]], [["say", "ask", "end"]], [["Constant", "Heavy", "next"], ["six", "seven", "next"]], [], [["autumn", "winter", "next"], ["5:09", "5:19", "end"]], [["get", "see", "end"]], []],
+      "timing": [[0, 0, 0, 0, 1, 1, 3, 3, 4, 4, 5, 5], null, [0, 0, 1, 1, 1, 2, 4, 4, 4, 4, 4], [1, 1, 1, 4, 5, 5, 7, 8, 8, 8, 8, 8], null, [1, 1, 2, 2, 2, 3, 4, 5, 6, 6, 6, 6, 6, 7, 7, 7, 8, 9, 9], null, [0, 2, 3, 4, 5, 5, 6, 7, 8, 9, 12, 12, 12, 12], null, null],
+      "note": "Concept: how SignAI is meant to translate. Motion from real DGS videos<sup><a href='#source-4'>4</a>,<a href='#source-5'>5</a></sup>, translations pre-set."
+    },
+    "award_mark": "1<sup>st</sup>",
+    "award_title": "1st place, Mathematics & Computer Science",
+    "award_sub": "Jugend forscht junior · Bavarian State Competition 2026",
+    "featured": "Featured in",
+    "why": {
+      "photo_alt": "Two friends talking in sign language over lunch in a café.",
+      "eyebrow": "Why it matters",
+      "title": "Communication shouldn’t depend on who is available to interpret.",
+      "lead": "Sign languages are full languages, with their own grammar, vocabulary and dialects. But a meeting at work, a lecture, a quick question at a counter: most of daily life runs on spoken language. Interpreters are essential. There just aren’t enough of them to be at every one of those moments.",
+      "stats": [
+        {"num": "70M+", "label": "Deaf people worldwide, signing in more than 300 different sign languages."},
+        {"num": "~80,000", "label": "Deaf people in Germany. For many of them, DGS is their first language."},
+        {"num": "2002", "label": "The year German Sign Language was legally recognized as a language of its own."}
+      ]
+    },
+    "mission": {
+      "photo_alt": "Two people sign to each other on a winter street, hands in focus.",
+      "eyebrow": "What we’re building",
+      "title": "Conversations that don’t wait for an interpreter.",
+      "text": "Today, many conversations between Deaf and hearing people run on handwritten notes or waiting for an interpreter. We’re building products that let everyone use their own language, with just a camera in between.",
+      "points": [
+        {"icon": "languages", "title": "In your own language", "text": "Sign the way you normally would. SignAI handles the text."},
+        {"icon": "clock", "title": "In real time", "text": "Nothing to book, nothing to wait for. The text appears while you sign."},
+        {"icon": "camera", "title": "With what you have", "text": "No gloves, sensors or special hardware. A regular camera is enough."}
+      ],
+      "cta": "Be the first to know"
+    },
+    "how": {
+      "photo_alt": "A man signs on a video call while the person he is talking to signs into the laptop camera.",
+      "eyebrow": "How it works",
+      "title": "From camera to conversation.",      "steps": [
+        {"title": "Capture", "text": "A standard webcam or phone camera. That’s the whole setup."},
+        {"title": "Understand", "text": "SignAI tracks the hands, body, face and mouth. In sign language, all four carry meaning."},
+        {"title": "Translate", "text": "A sequence model turns what it sees into glosses, and glosses into readable sentences."},
+        {"title": "Read", "text": "The translation shows up as plain text, right as it’s signed."}
+      ]
+    },
+    "tech": {
+      "eyebrow": "Technology",
+      "title": "Built on how sign language actually works.",
+      "text": "The hands are only part of it. Facial expressions mark questions, mouth patterns tell otherwise identical signs apart, and movement through space carries grammar. Our next-generation model reads all of it at once.",
+      "cta": "Explore the technology",
+      "streams": [
+        {"icon": "body", "title": "Body & movement", "text": "Pose keypoints over time capture location, motion and rhythm."},
+        {"icon": "hand", "title": "Hands", "text": "A vision transformer reads hand shape and orientation for both hands."},
+        {"icon": "face", "title": "Face & mouth", "text": "Mouthings and facial grammar resolve meaning the hands alone cannot."},
+        {"icon": "layers", "title": "Fusion", "text": "All three streams combine into one representation of what was signed."}
+      ]
+    },
+    "principles": {
+      "eyebrow": "Our principles",
+      "title": "How we build.",
+      "items": [
+        {"icon": "languages", "title": "Sign language first", "text": "DGS is a full language with its own grammar. We don’t treat it as a set of gestures to decode."},
+        {"icon": "users", "title": "Complementing interpreters", "text": "SignAI is for everyday moments. At the doctor’s, in court, or anywhere else a mistake is costly, you want a professional interpreter."},
+        {"icon": "shield", "title": "Privacy by design", "text": "We process video to translate it, not to keep it. As much as possible should run on your own device."},
+        {"icon": "scale", "title": "Honest about accuracy", "text": "We test on clips the model never trains on, publish results only once the evaluation is done, and are open about what it cannot do yet."},
+        {"icon": "message", "title": "Shaped with the community", "text": "We want Deaf signers, interpreters and researchers to test what we build and tell us where it’s wrong."},
+        {"icon": "research", "title": "Open research", "text": "Our research code is public, so methods can be inspected, reproduced and improved."}
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "Where we are, and where we’re going.",
+      "items": [
+        {"state": "done", "date": "Autumn 2025", "title": "First public desktop prototype", "text": "A Windows prototype that translated short DGS sentences straight from a webcam."},
+        {"state": "done", "date": "Spring 2026", "title": "Sentence model with attention", "text": "A BiLSTM encoder–decoder with multi-head attention and a vocabulary of more than 800 DGS glosses."},
+        {"state": "done", "date": "April 2026", "title": "1st place at the Bavarian state competition", "text": "Jugend forscht junior, Mathematics & Computer Science."},
+        {"state": "now", "date": "Now", "title": "Next-generation model in training", "text": "Three-stream fusion of body, hands and mouth, trained sign by sign on the Public DGS Corpus."},
+        {"state": "next", "date": "Next", "title": "First product launch", "text": "Our first products for everyday communication between Deaf and hearing people.", "cta": "Get notified"},
+        {"state": "next", "date": "Later", "title": "More sign languages", "text": "Extending beyond DGS, starting with American Sign Language (ASL)."}
+      ],
+      "notice_strong": "Looking for the desktop app?",
+      "notice": "We retired the first prototype to focus on the next SignAI.",
+      "notice_link": "Read more"
+    },
+    "work": {
+      "photo_alt": "Two women at a bright table having a conversation in sign language.",
+      "eyebrow": "Work with us",
+      "title": "Help us build SignAI.",
+      "lead": "We work with researchers, organizations and the Deaf community. Pick whichever fits you.",
+      "cards": [
+        {"icon": "research", "title": "For research", "text": "Datasets, evaluation, compute, models. If you work on sign language understanding, we should talk.", "link": "Start a collaboration", "subject": "Research collaboration"},
+        {"icon": "briefcase", "title": "For organizations", "text": "Thinking about accessibility at your organization? Tell us where communication breaks down today, and we’ll tell you honestly whether SignAI could help.", "link": "Get in touch", "subject": "Organization inquiry"},
+        {"icon": "users", "title": "For the Deaf community", "text": "Test early versions and tell us what matters to you. You’ll see the rough edges before anyone else does.", "link": "Get involved", "subject": "Community: I'd like to get involved"}
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Frequently asked questions.",
+      "lead": "Can’t find what you’re looking for? Write to <a href='mailto:hello@signai.dev'>hello@signai.dev</a>.",
+      "items": [
+        {"q": "What is SignAI?", "a": "SignAI is an AI system that recognizes sign language from ordinary video and translates it into text in real time. For now it works with German Sign Language (DGS, Deutsche Gebärdensprache). We’re turning it into products for everyday conversations between Deaf and hearing people."},
+        {"q": "When will SignAI be available?", "a": "We’re training the next model now and getting the first products ready. <a href='#updates'>Sign up for updates</a> and we’ll email you on launch day."},
+        {"q": "Where can I download the SignAI desktop app?", "a": "The first-generation desktop prototype for Windows has been retired, and downloads are paused while we build the next SignAI. <a href='/download'>Read more</a>."},
+        {"q": "Which sign languages does SignAI support?", "a": "SignAI is trained on German Sign Language (DGS). Additional sign languages, starting with American Sign Language (ASL), are on our roadmap."},
+        {"q": "Will SignAI replace sign language interpreters?", "a": "No. For medical appointments, legal matters and anything else where a mistake is costly, you need a professional interpreter. SignAI is for the moments when no interpreter is there, which is most of them."},
+        {"q": "How accurate is SignAI?", "a": "Our current sentence model covers a vocabulary of more than 800 DGS glosses and translates short sentences of up to around 15 signs. It works best with clear signing and good lighting. The next-generation model is tested on a held-out set of clips it never trains on, and we will publish results once evaluation is complete."},
+        {"q": "How does SignAI handle privacy?", "a": "We collect as little as we can. Video is processed to produce a translation and isn’t stored by default. Where possible, we want recognition to run on your own device. Your data is never used for research without your explicit consent."},
+        {"q": "Is SignAI open source?", "a": "Our research code is publicly available on <a href='https://github.com/Stefanos0710/SignAI' rel='noopener'>GitHub</a> under a non-commercial license. For commercial use, licensing or partnerships, please contact us."},
+        {"q": "How can I work with SignAI?", "a": "We are looking for research collaborators for datasets, evaluation and compute, organizations that care about accessibility, and members of the Deaf community who want to help shape what we build. Write to <a href='mailto:hello@signai.dev'>hello@signai.dev</a>."}
+      ]
+    },
+    "photo_credit": "Photos and video: cottonbro studio, RDNE Stock project and SHVETS production on <a href='https://www.pexels.com/' rel='noopener' target='_blank'>Pexels</a>.",
+    "sources_title": "Sources",
+    "sources": [
+      "World Federation of the Deaf. <a href='https://wfdeaf.org/our-work/' rel='noopener' target='_blank'>wfdeaf.org</a>",
+      "Deutscher Gehörlosen-Bund e.V. <a href='https://www.gehoerlosen-bund.de/' rel='noopener' target='_blank'>gehoerlosen-bund.de</a>",
+      "Behindertengleichstellungsgesetz (BGG), § 6: German Sign Language is recognized as an independent language.",
+      "Sign videos in the demo: SignDict, Henrike Maria Bartsch / gebaerdenlernen.de, licence CC BY-NC-SA 3.0 DE. <a href='https://signdict.org' rel='noopener' target='_blank'>signdict.org</a>",
+      "Sign videos in the demo: RWTH-PHOENIX-Weather 2014 T, RWTH Aachen University (research dataset). <a href='https://www-i6.informatik.rwth-aachen.de/~koller/RWTH-PHOENIX-2014-T/' rel='noopener' target='_blank'>rwth-aachen.de</a>"
+    ]
+  },
+  "technology": {
+    "title": "SignAI Technology — How AI Recognizes Sign Language",
+    "description": "How SignAI recognizes sign language: body, hand and mouth streams fused into one model, trained on the Public DGS Corpus and read sign by sign into sentences.",
+    "og_title": "The technology behind SignAI",
+    "crumb": "Technology",
+    "eyebrow": "Technology",
+    "h1": "The technology behind <em>SignAI.</em>",
+    "lead": "Sign language uses the hands, the face, the body and the space around the signer, all at once. SignAI reads them together: three streams, fused into one model.",
+    "hero_meta": [
+      "Body, hands and mouth",
+      "Trained on the Public DGS Corpus",
+      "Sign by sign to sentences"
+    ],
+    "pipeline": {
+      "eyebrow": "Pipeline",
+      "title": "From pixels to sentences.",
+      "lead": "Five stages, from raw video to text you can read.",
+      "photo_alt": "A woman in a café signs on a video call on her tablet.",
+      "steps": [
+        {
+          "icon": "camera",
+          "title": "Video",
+          "text": "Standard RGB video from a webcam or phone."
+        },
+        {
+          "icon": "eye",
+          "title": "Landmarks & crops",
+          "text": "49 body and hand landmarks per frame, plus crops of both hands and the mouth."
+        },
+        {
+          "icon": "layers",
+          "title": "Three streams",
+          "text": "Movement, hand shape and mouth patterns, each with its own encoder."
+        },
+        {
+          "icon": "letters",
+          "title": "Sign",
+          "text": "The fused features are classified as one sign, written as a gloss."
+        },
+        {
+          "icon": "captions",
+          "title": "Sentence",
+          "text": "Sign by sign, the glosses become a readable sentence."
+        }
+      ]
+    },
+    "model": {
+      "eyebrow": "Next-generation model",
+      "title": "Three streams, fused into one.",
+      "lead": "Many signs share the same hand movement and differ only in hand shape, facial expression or mouthing. So our model gives each channel its own encoder, then fuses the three.",
+      "streams": [
+        {
+          "icon": "body",
+          "dim": "384-d",
+          "title": "Body & movement",
+          "text": "Seven upper-body points and 21 points per hand become per-landmark heatmaps over 32 frames. A 3D convolutional network (SlowOnly ResNet-50) reads location, movement and rhythm from them."
+        },
+        {
+          "icon": "hand",
+          "dim": "768-d",
+          "title": "Hands",
+          "text": "Crops of both hands go through a frozen DINOv3 vision transformer. A small temporal transformer, shared by both hands, follows hand shape and orientation over time."
+        },
+        {
+          "icon": "face",
+          "dim": "384-d",
+          "title": "Face & mouth",
+          "text": "Mouth crops pass through the same design to capture mouthings and facial expression. Without them, signs with identical hand movements look the same."
+        }
+      ],
+      "fusion_strong": "Fusion.",
+      "fusion": "The three features are joined into one 1,536-dimensional vector and classified together. DINOv3 runs once, offline, so training only touches cached features and stays fast and reproducible."
+    },
+    "translation": {
+      "eyebrow": "Sentence-level translation",
+      "title": "From single signs to sentences.",
+      "p1": "The word model is the foundation. It recognizes one sign at a time and names it as a gloss, the written label linguists use for a sign.",
+      "p2": "For sentences, the same model reads a signed sentence sign by sign. The result is a sequence of glosses, like MORGEN REGEN NORD.",
+      "p3": "Glosses follow the grammar of sign language, not of German. A separate language step, which we’re building next, turns them into fluent sentences.",
+      "code_title": "word model — simplified",
+      "code_output": "Tomorrow it will rain in the north.",
+      "code_aria": "Simplified architecture of the word model",
+      "flow_signs": "Signs",
+      "flow_glosses": "Glosses",
+      "flow_sentence": "Sentence",
+      "flow_next": "Next"
+    },
+    "data": {
+      "eyebrow": "Data & evaluation",
+      "title": "Learned from real conversations.",
+      "lead": "SignAI doesn’t learn from staged word lists. It learns from Deaf people signing naturally, cut into single signs. We’ll publish accuracy once the evaluation is done.",
+      "cards": [
+        {
+          "icon": "users",
+          "title": "Natural signing data",
+          "text": "We train on the Public DGS Corpus: conversations between Deaf signers from all over Germany. Its expert annotations mark where each sign starts and ends, so every sign becomes its own clip."
+        },
+        {
+          "icon": "target",
+          "title": "Camera-proof preprocessing",
+          "text": "Keypoints are centered on the shoulders, scaled by shoulder width, interpolated where landmarks drop out and smoothed over time. Every clip is resampled to 32 frames."
+        },
+        {
+          "icon": "spark",
+          "title": "Fair across skin tones and rooms",
+          "text": "Hand and mouth crops are color-corrected (Shades of Gray), so lighting and skin tone matter less. Augmentation for skin tone, color, framing and blur is in the works."
+        },
+        {
+          "icon": "database",
+          "title": "A clean test set",
+          "text": "Signs with fewer than five examples are left out. The rest are split per sign into training, validation and test sets, and the model never trains on the test set."
+        }
+      ]
+    },
+    "research": {
+      "eyebrow": "Research roadmap",
+      "title": "What we’re working on next.",
+      "items": [
+        {
+          "icon": "letters",
+          "title": "Fingerspelling",
+          "text": "A dedicated classifier for the manual alphabet handles names, places and terms without an established sign."
+        },
+        {
+          "icon": "database",
+          "title": "Thousands of signs",
+          "text": "Scaling the vocabulary from hundreds to thousands of glosses with larger datasets and more compute."
+        },
+        {
+          "icon": "layers",
+          "title": "Continuous signing",
+          "text": "Finding where one sign ends and the next begins, so the word model can read whole sentences on its own."
+        },
+        {
+          "icon": "message",
+          "title": "Fluent output",
+          "text": "Turning gloss sequences into natural, grammatical written language."
+        },
+        {
+          "icon": "languages",
+          "title": "More sign languages",
+          "text": "Extending beyond DGS, starting with American Sign Language (ASL)."
+        },
+        {
+          "icon": "monitor",
+          "title": "On-device inference",
+          "text": "Efficient models that run locally for lower latency and stronger privacy."
+        }
+      ],
+      "stack_label": "Built with"
+    },
+    "open": {
+      "title": "Research in the open.",
+      "text": "Our research code is public. If you work on sign language, computer vision or accessibility, get in touch.",
+      "cta": "Collaborate with us",
+      "github": "View on GitHub"
+    }
+  },
+  "download": {
+    "title": "SignAI Download — The Next Generation Is in Development",
+    "description": "SignAI desktop downloads are paused while we build the next generation of sign language AI. Sign up to be notified as soon as SignAI launches.",
+    "og_title": "The next SignAI is in the making",
+    "crumb": "Download",
+    "pill": "Downloads paused",
+    "h1": "The next SignAI is <em>in the making.</em>",
+    "lead": "Our first desktop prototype showed that sentence-level sign language translation works with an ordinary webcam. We’ve retired it to put everything into the next version: a more accurate model that reads body, hands and mouth together, and products for real conversations between Deaf and hearing people.",
+    "cta_primary": "Notify me at launch",
+    "cta_secondary": "Explore the technology",
+    "status_eyebrow": "Status",
+    "status_title": "What’s happening now.",
+    "cards": [
+      {"icon": "monitor", "tag": "Retired", "tag_class": "tag-muted", "title": "SignAI Desktop for Windows", "text": "The first-generation prototype (v0.1 – v1.1, 2025). It translated short DGS sentences from webcam video and is no longer distributed.", "button": "Download paused"},
+      {"icon": "layers", "tag": "In training", "tag_class": "tag-live", "title": "Next-generation model", "text": "A three-stream model that reads body, hands and mouth together, trained on the Public DGS Corpus.", "link": "About the technology", "href": "technology"},
+      {"icon": "spark", "tag": "In development", "tag_class": "tag-live", "title": "First products", "text": "Products for everyday communication between Deaf and hearing people. Sign up to hear about them first.", "link": "Notify me", "href": "#updates"}
+    ]
+  },
+  "notfound": {
+    "title": "Page not found — SignAI",
+    "description": "The page you were looking for does not exist. Continue to SignAI, AI for real-time sign language translation.",
+    "eyebrow": "Error 404",
+    "h1": "This page <em>doesn’t exist.</em>",
+    "lead": "The link may be outdated, or the page may have moved.",
+    "cta_primary": "Back to the homepage",
+    "cta_secondary": "Get updates"
+  }
+}

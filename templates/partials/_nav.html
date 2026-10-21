@@ -1,0 +1,36 @@
+{% from "partials/_icons.html" import icon %}
+{% set home = page_url('home', lang) %}
+{% set updates_href = home + '#updates' if page == '404' else '#updates' %}
+<header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main">
+        <a class="brand" href="{{ home }}" aria-label="SignAI — {{ L.common.home }}">
+            <img src="{{ url_for('static', filename='img/logo-96.png') }}" width="32" height="32" alt="" class="brand-logo">
+            <span class="brand-name">SignAI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-label-open="{{ L.common.menu_open }}" data-label-close="{{ L.common.menu_close }}">
+            <span class="sr-only">{{ L.common.menu_open }}</span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-links" role="list">
+                <li><a href="{{ home }}#mission">{{ L.nav.mission }}</a></li>
+                <li><a href="{{ page_url('technology', lang) }}"{% if page == 'technology' %} aria-current="page"{% endif %}>{{ L.nav.technology }}</a></li>
+                <li><a href="{{ home }}#roadmap">{{ L.nav.roadmap }}</a></li>
+                <li><a href="{{ home }}#contact">{{ L.nav.collaborate }}</a></li>
+                <li><a href="{{ home }}#faq">{{ L.nav.faq }}</a></li>
+            </ul>
+            {% if alternates %}
+            <details class="lang-switch">
+                <summary aria-label="{{ L.common.language }}: {{ L.meta.name }}">{{ icon('globe') }}<span>{{ L.meta.short }}</span></summary>
+                <ul class="lang-menu" role="list">
+                    {%- for code, href in alternates %}
+                    {%- set meta = languages | selectattr(0, 'equalto', code) | map(attribute=1) | first %}
+                    <li><a href="{{ href | replace(SITE_URL, '') }}" hreflang="{{ code }}" lang="{{ code }}"{% if code == lang %} aria-current="true"{% endif %}><span class="lang-code">{{ meta.short }}</span>{{ meta.name }}</a></li>
+                    {%- endfor %}
+                </ul>
+            </details>
+            {% endif %}
+            <a class="btn btn-primary btn-sm nav-cta" href="{{ updates_href }}">{{ icon('bell') }} {{ L.nav.cta }}</a>
+        </div>
+    </nav>
+</header>

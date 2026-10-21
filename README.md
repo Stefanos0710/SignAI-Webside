@@ -9,10 +9,56 @@ Original repository: https://github.com/Stefanos0710/SignAI
 <a href="https://www.seobility.net/de/seocheck/check?url=https%3A%2F%2Fwww.signai.dev%2F"><img src="https://app.seobility.net/widget/widget.png?url=https%3A%2F%2Fwww.signai.dev%2F" alt="Seobility Score für signai.dev"></a>
 
 ## What is in this repo
-- `static/` — CSS, JavaScript and images used by the site
-- `templates/` — HTML templates for the pages
-- `main.py` — entry point to run a local development web server (Flask)
-- `requirements.txt` — Python dependencies
+- `main.py` — Flask app: localized page routes, the sign-up endpoint (`POST /api/subscribe`), `robots.txt`, `sitemap.xml` (with hreflang alternates), web manifest, legacy redirects and security headers
+- `i18n/` — all website text, one file per language: `en.json`, `de.json`, `fr.json`, `es.json`
+- `templates/` — Jinja templates shared by all languages
+  - `base.html` — layout: SEO meta tags, hreflang, Open Graph/Twitter cards, JSON-LD structured data, analytics
+  - `home.html`, `technology.html`, `download.html`, `404.html`
+  - `partials/` — navigation (with language switcher), footer, sign-up form, language banner, icons, FAQ/structured-data macros and the keypoint illustration (`_signer.svg`)
+- `static/css/site.css` — the complete stylesheet (design tokens at the top)
+- `static/js/main.js` — header, mobile menu, language banner, FAQ, sign-up form and scroll-reveal behavior
+- `static/fonts/` — self-hosted Inter, Instrument Serif and JetBrains Mono (SIL OFL), so no third-party font requests
+- `static/img/` — logo sizes, favicons, apple-touch icon and one Open Graph image per language (`og-signai-<lang>.png`, 1200×630)
+
+## Languages and URLs
+| Page | English | Deutsch | Français | Español |
+|---|---|---|---|---|
+| Home | `/` | `/de/` | `/fr/` | `/es/` |
+| Technology | `/technology` | `/de/technologie` | `/fr/technologie` | `/es/tecnologia` |
+| Download | `/download` | `/de/download` | `/fr/telechargement` | `/es/descarga` |
+
+English is the default (`x-default`). Visitors are never redirected automatically; if their browser prefers another available language, a small banner offers it.
+
+To add a language: copy `i18n/en.json` to `i18n/<code>.json`, translate it, add the code to `LANGS` and its paths to `ROUTES` in `main.py`, and create `static/img/og-signai-<code>.png`.
+
+## Sign-ups ("Notify me")
+The form posts to `/api/subscribe`, which stores the email address in Supabase. Without configuration the form still works: it opens the visitor's email app with a pre-filled message to hello@signai.dev.
+
+1. Create the table (Supabase SQL editor):
+   ```sql
+   create table public.signai_subscribers (
+     id bigint generated always as identity primary key,
+     email text not null unique,
+     interest text not null default 'updates',  -- 'all' or a comma list, e.g. 'press,research'
+     lang text not null default 'en',
+     source text,
+     consented_at timestamptz not null,
+     created_at timestamptz not null default now()
+   );
+   -- No policies: only the server-side service role key can read or write.
+   alter table public.signai_subscribers enable row level security;
+   ```
+2. Set the environment variables on the server (e.g. in Vercel): `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. Optional: `SIGNAI_SIGNUP_TABLE`.
+
+## Configuration
+- `SIGNAI_SITE_URL` — canonical origin used for canonical links, hreflang, Open Graph URLs, structured data and the sitemap (default `https://www.signai.dev`, the host production serves; `signai.dev` redirects there).
+- `FLASK_DEBUG=1` — enables debug mode and template auto-reload for local development.
+- `ASSET_VERSION` in `main.py` — bump it after changing CSS/JS so browsers fetch the new files.
+- `LAST_UPDATED` in `main.py` — date used for `lastmod` in the sitemap and `dateModified` in structured data.
+
+## Notes
+- Public downloads are paused: the download pages explain that the first-generation desktop app is retired. The old `/download/instructions` URL permanently redirects to `/download`.
+- Adding a page: create the template, add its texts to every file in `i18n/`, add its paths to `ROUTES` and an entry to `SITEMAP` in `main.py`.
 
 ## Technologies
 - Python 3

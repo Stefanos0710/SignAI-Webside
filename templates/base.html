@@ -1,69 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}" dir="ltr">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    {%- set page_title = self.title() | trim %}
+    {%- set page_description = self.description() | trim %}
+    {%- set canonical = SITE_URL + request.path %}
+    {%- set og_image = SITE_URL + url_for('static', filename='img/og-signai-' + lang + '.png') %}
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description }}">
+    <meta name="robots" content="{% block robots %}index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1{% endblock %}">
+    {% block canonical_link %}<link rel="canonical" href="{{ canonical }}">{% endblock %}
+    {%- for code, href in alternates %}
+    <link rel="alternate" hreflang="{{ code }}" href="{{ href }}">
+    {%- endfor %}
+    {%- if alternates %}
+    <link rel="alternate" hreflang="x-default" href="{{ alternates[0][1] }}">
+    {%- endif %}
+    <meta name="author" content="SignAI">
+    <meta name="application-name" content="SignAI">
+    <meta name="theme-color" content="#0b1024">
+    <meta name="color-scheme" content="light">
+    <meta name="format-detection" content="telephone=no">
+
+    {# Open Graph #}
+    <meta property="og:site_name" content="SignAI">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:locale" content="{{ L.meta.locale }}">
+    {%- for code, meta in languages if code != lang %}
+    <meta property="og:locale:alternate" content="{{ meta.locale }}">
+    {%- endfor %}
+    <meta property="og:url" content="{{ canonical }}">
+    <meta property="og:title" content="{% block og_title %}{{ page_title }}{% endblock %}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:image" content="{{ og_image }}">
+    <meta property="og:image:secure_url" content="{{ og_image }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ L.common.og_alt }}">
+
+    {# Twitter / X #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ self.og_title() | trim }}">
+    <meta name="twitter:description" content="{{ page_description }}">
+    <meta name="twitter:image" content="{{ og_image }}">
+    <meta name="twitter:image:alt" content="{{ L.common.og_alt }}">
+
+    {# Icons & manifest #}
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/logo-32.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/logo-192.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+    <link rel="manifest" href="/site.webmanifest">
+
+    {# Fonts are self-hosted: no third-party font requests #}
+    <link rel="preload" href="{{ url_for('static', filename='fonts/inter-var-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/instrument-serif-italic-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ asset('css/site.css') }}">
+    {# Set before the first paint so CSS can hold back things JS is about to animate #}
+    <script>document.documentElement.classList.add("js")</script>
+    {% block preload %}{% endblock %}
+
+    {# Structured data #}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "{{ SITE_URL }}/#organization",
+          "name": "SignAI",
+          "url": "{{ SITE_URL }}/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ SITE_URL }}{{ url_for('static', filename='img/logo-512.png') }}",
+            "width": 512,
+            "height": 512
+          },
+          "image": "{{ og_image }}",
+          "description": {{ L.common.org_description | tojson }},
+          "email": "hello@signai.dev",
+          "foundingDate": "2025",
+          "foundingLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "DE" } },
+          "knowsAbout": ["Sign language recognition", "Sign language translation", "German Sign Language (DGS)", "Deutsche Gebärdensprache", "Gebärdensprache", "Langue des signes", "Lengua de señas", "Computer vision", "Deep learning", "Accessibility"],
+          "award": "1st place, Mathematics/Computer Science, Jugend forscht junior Bavarian State Competition 2026",
+          "contactPoint": [
+            { "@type": "ContactPoint", "contactType": "customer support", "email": "support@signai.dev", "availableLanguage": ["English", "German"] },
+            { "@type": "ContactPoint", "contactType": "partnerships", "email": "hello@signai.dev", "availableLanguage": ["English", "German"] }
+          ],
+          "sameAs": ["https://github.com/Stefanos0710/SignAI"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ SITE_URL }}/#website",
+          "url": "{{ SITE_URL }}/",
+          "name": "SignAI",
+          "inLanguage": {{ LANGS | list | tojson }},
+          "publisher": { "@id": "{{ SITE_URL }}/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "{{ canonical }}#webpage",
+          "url": "{{ canonical }}",
+          "name": {{ page_title | tojson }},
+          "description": {{ page_description | tojson }},
+          "inLanguage": "{{ lang }}",
+          "isPartOf": { "@id": "{{ SITE_URL }}/#website" },
+          "about": { "@id": "{{ SITE_URL }}/#organization" },
+          "dateModified": "{{ last_updated.isoformat() }}",
+          "primaryImageOfPage": { "@type": "ImageObject", "url": "{{ og_image }}" }
+        }{% block structured_data %}{% endblock %}
+      ]
+    }
+    </script>
+
+    {# Google Analytics in Consent Mode v2: until the visitor accepts, GA sets no cookies and only sends anonymous pings #}
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGZYP8RGNC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      var consent; try { consent = localStorage.getItem('signai-consent'); } catch (e) {}
+      gtag('consent', 'default', {
+        analytics_storage: consent === 'granted' ? 'granted' : 'denied',
+        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+      });
       gtag('js', new Date());
-
       gtag('config', 'G-XGZYP8RGNC');
     </script>
-    <meta charset="utf-8">
-    <title>{% block title %}SignAI - Sign Language Translator{% endblock %}</title>
-
-    {# Primary favicon links - served from static #}
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon/icon.png') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='icon/icon.png') }}">
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon/icon.png') }}">
-
-    {# Web app manifest #}
-    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
-
-    {# SEO meta tags #}
-    <meta name="description" content="{% block meta_description %}SignAI — AI-powered sign language translator. Real-time sign language recognition and translation.{% endblock %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
-
-    {# Microsoft tile #}
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ url_for('static', filename='icon/icon.png') }}">
-
-    {# Canonical - set to index by default #}
-    <link rel="canonical" href="{{ url_for('index', _external=True) }}">
-
-    {# Open Graph / Social #}
-    <meta property="og:title" content="{% block og_title %}SignAI{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}SignAI — AI-powered sign language translator.{% endblock %}">
-    <meta property="og:image" content="{{ url_for('static', filename='icon/icon.png', _external=True) }}">
-    <meta property="og:type" content="website">
-
-    {# Twitter Card #}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}SignAI{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}SignAI — AI-powered sign language translator.{% endblock %}">
-    <meta name="twitter:image" content="{{ url_for('static', filename='icon/icon.png', _external=True) }}">
-
-    {# Stylesheets - kept here so all pages inherit them #}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/desktop.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-
-    {% block head_extra %}{% endblock %}
 </head>
-<body>
-    {% block content %}{% endblock %}
-
-    {# Global scripts #}
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    {% block scripts %}{% endblock %}
+<body class="{% block body_class %}{% endblock %}" data-lang="{{ lang }}">
+    <a class="skip-link" href="#main">{{ L.common.skip }}</a>
+    {% include "partials/_lang_banner.html" %}
+    {% include "partials/_nav.html" %}
+    <main id="main">
+        {% block content %}{% endblock %}
+    </main>
+    {% include "partials/_footer.html" %}
+    {# In debug mode (local dev) the bar shows on every load, whatever was chosen before #}
+    <div class="cookie-bar" hidden{% if config.DEBUG %} data-always{% endif %}>
+        <div class="cookie-bar-inner">
+            <p>{{ L.common.cookie_text }}</p>
+            <div class="cookie-bar-actions">
+                <button class="cookie-btn" type="button" data-consent="denied">{{ L.common.cookie_decline }}</button>
+                <button class="cookie-btn cookie-btn-primary" type="button" data-consent="granted">{{ L.common.cookie_accept }}</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('js/main.js') }}" defer></script>
 </body>
 </html>

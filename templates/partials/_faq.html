@@ -1,0 +1,41 @@
+{% from "partials/_icons.html" import icon %}
+{% macro faq_list(faqs) -%}
+<div class="faq-list">
+    {%- for item in faqs %}
+    <details class="faq-item"{% if loop.first %} open{% endif %}>
+        <summary><h3 class="faq-q">{{ item.q }}</h3><span class="faq-icon" aria-hidden="true">{{ icon('plus') }}</span></summary>
+        <div class="faq-a"><p>{{ item.a | safe }}</p></div>
+    </details>
+    {%- endfor %}
+</div>
+{%- endmacro %}
+
+{% macro faq_schema(faqs) -%}
+,
+{
+  "@type": "FAQPage",
+  "@id": "{{ SITE_URL }}{{ request.path }}#faq",
+  "inLanguage": "{{ lang }}",
+  "mainEntity": [
+    {%- for item in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | tojson }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | striptags | tojson }} }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+{%- endmacro %}
+
+{% macro breadcrumb_schema(name) -%}
+,
+{
+  "@type": "BreadcrumbList",
+  "@id": "{{ SITE_URL }}{{ request.path }}#breadcrumb",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": {{ L.common.home | tojson }}, "item": "{{ SITE_URL }}{{ page_url('home', lang) }}" },
+    { "@type": "ListItem", "position": 2, "name": {{ name | tojson }}, "item": "{{ SITE_URL }}{{ request.path }}" }
+  ]
+}
+{%- endmacro %}

@@ -1,0 +1,58 @@
+{% from "partials/_icons.html" import icon, github %}
+{% set home = page_url('home', lang) %}
+{% set updates_href = home + '#updates' if page == '404' else '#updates' %}
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a class="brand brand-light" href="{{ home }}" aria-label="SignAI — {{ L.common.home }}">
+                    <img src="{{ url_for('static', filename='img/logo-96.png') }}" width="36" height="36" alt="" loading="lazy" class="brand-logo">
+                    <span class="brand-name">SignAI</span>
+                </a>
+                <p>{{ L.footer.tagline }}</p>
+                <a class="footer-mail" href="mailto:hello@signai.dev">{{ icon('mail') }} hello@signai.dev</a>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h2 class="footer-title">{{ L.footer.col_signai }}</h2>
+                    <ul role="list">
+                        <li><a href="{{ home }}#mission">{{ L.footer.mission }}</a></li>
+                        <li><a href="{{ home }}#roadmap">{{ L.footer.roadmap }}</a></li>
+                        <li><a href="{{ page_url('download', lang) }}">{{ L.footer.downloads }}</a></li>
+                        <li><a href="{{ updates_href }}">{{ L.footer.updates }}</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2 class="footer-title">{{ L.footer.col_research }}</h2>
+                    <ul role="list">
+                        <li><a href="{{ page_url('technology', lang) }}">{{ L.footer.technology }}</a></li>
+                        <li><a href="{{ page_url('technology', lang) }}#data">{{ L.footer.data }}</a></li>
+                        <li><a href="https://github.com/Stefanos0710/SignAI" rel="noopener" target="_blank">{{ L.footer.github }}</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2 class="footer-title">{{ L.footer.col_contact }}</h2>
+                    <ul role="list">
+                        <li><a href="mailto:hello@signai.dev?subject=Partnership%20%E2%80%94%20SignAI">{{ L.footer.partnerships }}</a></li>
+                        <li><a href="mailto:hello@signai.dev?subject=Press%20%E2%80%94%20SignAI">{{ L.footer.press }}</a></li>
+                        <li><a href="mailto:support@signai.dev">{{ L.footer.support }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ current_year }} SignAI. {{ L.footer.rights }} · {{ L.footer.made_in }} · <button class="footer-cookie" type="button" data-cookie-settings>{{ L.common.cookie_settings }}</button></p>
+            <div class="footer-bottom-links">
+                {% if alternates %}
+                <ul class="footer-langs" role="list" aria-label="{{ L.footer.col_language }}">
+                    {%- for code, href in alternates %}
+                    {%- set meta = languages | selectattr(0, 'equalto', code) | map(attribute=1) | first %}
+                    <li><a href="{{ href | replace(SITE_URL, '') }}" hreflang="{{ code }}" lang="{{ code }}"{% if code == lang %} aria-current="true"{% endif %}>{{ meta.name }}</a></li>
+                    {%- endfor %}
+                </ul>
+                {% endif %}
+                <a href="https://github.com/Stefanos0710/SignAI" rel="noopener" target="_blank" aria-label="SignAI on GitHub" class="footer-social">{{ github() }}</a>
+            </div>
+        </div>
+    </div>
+</footer>

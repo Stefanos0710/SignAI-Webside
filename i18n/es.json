@@ -1,0 +1,387 @@
+{
+  "meta": {
+    "lang": "es",
+    "locale": "es_ES",
+    "name": "Español",
+    "short": "ES",
+    "banner": "Esta página también está disponible en español.",
+    "banner_link": "Ver en español"
+  },
+  "common": {
+    "skip": "Saltar al contenido",
+    "menu_open": "Abrir menú",
+    "menu_close": "Cerrar menú",
+    "language": "Idioma",
+    "home": "Inicio",
+    "dismiss": "Cerrar",
+    "cookie_text": "Usamos cookies de Google Analytics para mejorar el sitio.",
+    "cookie_accept": "Aceptar",
+    "cookie_decline": "Rechazar",
+    "cookie_settings": "Configuración de cookies",
+    "org_description": "SignAI desarrolla inteligencia artificial que reconoce la lengua de señas en un vídeo normal y la traduce a texto, empezando por la lengua de señas alemana (DGS).",
+    "og_alt": "SignAI: la lengua de señas, entendida en tiempo real."
+  },
+  "nav": {
+    "mission": "Misión",
+    "technology": "Tecnología",
+    "roadmap": "Hoja de ruta",
+    "collaborate": "Colaborar",
+    "faq": "Preguntas",
+    "cta": "Recibir novedades"
+  },
+  "footer": {
+    "tagline": "Inteligencia artificial que lee la lengua de señas y la escribe como texto, para que personas sordas y oyentes se entiendan sin esperar a un intérprete.",
+    "col_signai": "SignAI",
+    "col_research": "Investigación",
+    "col_contact": "Contacto",
+    "col_language": "Idioma",
+    "mission": "Misión",
+    "roadmap": "Hoja de ruta",
+    "downloads": "Descargas",
+    "updates": "Recibir novedades",
+    "technology": "Tecnología",
+    "data": "Datos y evaluación",
+    "github": "Código fuente en GitHub",
+    "partnerships": "Colaboraciones",
+    "press": "Prensa",
+    "support": "Soporte",
+    "rights": "Todos los derechos reservados.",
+    "made_in": "Desarrollado en Alemania"
+  },
+  "signup": {
+    "eyebrow": "Mantente al día",
+    "title": "Entérate antes que nadie.",
+    "lead": "Te escribiremos cuando SignAI se lance y, de vez en cuando, cuando la investigación alcance un hito. Nada más.",
+    "email_label": "Correo electrónico",
+    "email_placeholder": "tu@ejemplo.com",
+    "consent": "Acepto que SignAI guarde mi correo electrónico para informarme sobre el lanzamiento y sus novedades. Puedo darme de baja en cualquier momento.",
+    "button": "Avisarme",
+    "sending": "Enviando…",
+    "success_title": "Ya estás en la lista.",
+    "success": "Gracias. Te escribiremos cuando haya algo que contar.",
+    "error_email": "Introduce un correo electrónico válido.",
+    "error_consent": "Confirma que podemos guardar tu correo electrónico.",
+    "error_generic": "Algo ha fallado. Inténtalo de nuevo o escribe a hello@signai.dev.",
+    "fallback": "Se abrirá tu aplicación de correo con el mensaje ya escrito. Solo tienes que enviarlo.",
+    "mail_subject": "Aviso de lanzamiento de SignAI",
+    "mail_body": "Me gustaría recibir un aviso en cuanto se lance SignAI.",
+    "perks": ["Anuncio del lanzamiento", "Invitaciones a versiones tempranas", "Hitos de investigación"]
+  },
+  "home": {
+    "title": "SignAI — Traductor de lengua de señas con IA en tiempo real",
+    "description": "SignAI desarrolla una IA que reconoce la lengua de señas con una cámara normal y la convierte en texto. Empezamos por la lengua de señas alemana (DGS).",
+    "og_title": "SignAI — La lengua de señas, entendida en tiempo real",
+    "h1": "La lengua de señas, entendida en <em>tiempo&nbsp;real.</em>",
+    "lead": "SignAI observa la lengua de señas a través de una cámara normal y escribe lo que se ha signado. Empezamos por la lengua de señas alemana y preparamos productos para las conversaciones cotidianas en las que no hay ningún intérprete.",
+    "cta_primary": "Avisarme del lanzamiento",
+    "cta_secondary": "Conocer la tecnología",
+    "scroll": "Descubre más",
+    "hero_meta": ["DGS", "Cámara normal", "Privacidad desde el diseño"],
+    "demo": {
+      "title": "Subtítulos en directo",
+      "live": "Concepto",
+      "pair": "DGS → español",
+      "texts": ["Por cierto, ese es nuestro estudio: ahí abajo estoy yo ahora mismo.", "¡Tú tranquilo, con calma!", "Así que quien siga de vacaciones va a sudar.", "Y todavía estamos a unos tres mil kilómetros de un invierno de verdad.", "Un momento, me gustaría decir algo sobre eso.", "Lluvia continua y solo de seis a ocho grados: vaya día. A partir de ahora solo puede mejorar.", "¡Feliz cumpleaños!", "Y entonces llega el otoño: empieza mañana temprano a las 5:09, oficialmente según el calendario.", "¡Ah, ahora lo entiendo!", "¿Qué tal?"],
+      "errors": [[["estudio:", "televisor:", "next"], ["abajo", "arriba", "end"]], [], [["vacaciones", "permiso", "next"]], [["mil", "cientos", "next"], ["invierno", "nieve", "end"]], [["decir", "preguntar", "end"]], [["continua", "fuerte", "next"], ["seis", "siete", "next"]], [], [["otoño:", "invierno:", "next"], ["5:09,", "5:19,", "end"]], [], []],
+      "timing": [[0, 0, 0, 0, 1, 1, 3, 3, 4, 4, 5, 5], null, [0, 0, 0, 1, 1, 1, 4, 4, 4], [1, 1, 1, 4, 4, 5, 5, 7, 8, 8, 8, 8, 8], null, [1, 1, 2, 2, 2, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 8, 8, 9], null, [0, 2, 3, 3, 3, 5, 6, 7, 8, 8, 9, 12, 12, 12, 12], null, null],
+      "note": "Concepto: así traducirá SignAI. Movimientos de vídeos reales en DGS<sup><a href='#source-4'>4</a>,<a href='#source-5'>5</a></sup>, traducciones predefinidas."
+    },
+    "award_mark": "1.<sup>er</sup>",
+    "award_title": "1.er premio, Matemáticas e Informática",
+    "award_sub": "Jugend forscht junior · Certamen estatal de Baviera 2026",
+    "featured": "En los medios",
+    "why": {
+      "photo_alt": "Dos amigos conversan en lengua de señas mientras comen en una cafetería.",
+      "eyebrow": "Por qué importa",
+      "title": "Comunicarse no debería depender de que haya un intérprete disponible.",
+      "lead": "Las lenguas de señas son lenguas completas, con su propia gramática, vocabulario y variantes regionales. Pero una reunión de trabajo, una clase, una pregunta rápida en una ventanilla: casi toda la vida diaria funciona en lengua oral. Los intérpretes son imprescindibles. Simplemente no hay suficientes para estar en cada uno de esos momentos.",
+      "stats": [
+        {"num": "70 M+", "label": "personas sordas en el mundo, que usan más de 300 lenguas de señas distintas."},
+        {"num": "~80.000", "label": "personas sordas en Alemania. Para muchas de ellas, la DGS es su primera lengua."},
+        {"num": "2002", "label": "año en que la lengua de señas alemana fue reconocida por ley como lengua propia."}
+      ]
+    },
+    "mission": {
+      "photo_alt": "Dos personas signan entre sí en una calle en invierno, con las manos en primer plano.",
+      "eyebrow": "Lo que estamos construyendo",
+      "title": "Conversaciones que no esperan a un intérprete.",
+      "text": "Hoy, muchas conversaciones entre personas sordas y oyentes dependen de notas escritas o de esperar a un intérprete. Desarrollamos productos que permiten a cada persona usar su propia lengua, con solo una cámara de por medio.",
+      "points": [
+        {"icon": "languages", "title": "En tu propia lengua", "text": "Signa como siempre. SignAI se encarga del texto."},
+        {"icon": "clock", "title": "En tiempo real", "text": "Nada que reservar, nada que esperar. El texto aparece mientras signas."},
+        {"icon": "camera", "title": "Con lo que ya tienes", "text": "Sin guantes, sensores ni hardware especial. Basta con una cámara normal."}
+      ],
+      "cta": "Enterarme antes que nadie"
+    },
+    "how": {
+      "photo_alt": "Un hombre signa en una videollamada mientras su interlocutor signa hacia la cámara del portátil.",
+      "eyebrow": "Cómo funciona",
+      "title": "De la cámara a la conversación.",      "steps": [
+        {"title": "Captar", "text": "Una webcam o la cámara del móvil. No hace falta nada más."},
+        {"title": "Comprender", "text": "SignAI sigue las manos, el cuerpo, la cara y la boca. En la lengua de señas, los cuatro transmiten significado."},
+        {"title": "Traducir", "text": "Un modelo secuencial convierte lo que ve en glosas, y las glosas en frases legibles."},
+        {"title": "Leer", "text": "La traducción aparece como texto sencillo, justo mientras se signa."}
+      ]
+    },
+    "tech": {
+      "eyebrow": "Tecnología",
+      "title": "Diseñada según cómo funciona realmente la lengua de señas.",
+      "text": "Las manos son solo una parte. Las expresiones faciales marcan las preguntas, los movimientos de la boca distinguen señas por lo demás idénticas y el movimiento en el espacio transmite gramática. Nuestro modelo de nueva generación lo lee todo a la vez.",
+      "cta": "Conocer la tecnología",
+      "streams": [
+        {"icon": "body", "title": "Cuerpo y movimiento", "text": "Los puntos clave del cuerpo a lo largo del tiempo captan la ubicación, el movimiento y el ritmo."},
+        {"icon": "hand", "title": "Manos", "text": "Un vision transformer lee la configuración y la orientación de ambas manos."},
+        {"icon": "face", "title": "Cara y boca", "text": "La vocalización y la gramática facial resuelven lo que las manos por sí solas no pueden."},
+        {"icon": "layers", "title": "Fusión", "text": "Los tres flujos se combinan en una única representación de lo que se ha signado."}
+      ]
+    },
+    "principles": {
+      "eyebrow": "Nuestros principios",
+      "title": "Cómo trabajamos.",
+      "items": [
+        {"icon": "languages", "title": "La lengua de señas, primero", "text": "La DGS es una lengua completa con su propia gramática. No la tratamos como un conjunto de gestos que descifrar."},
+        {"icon": "users", "title": "Complemento a los intérpretes", "text": "SignAI es para el día a día. En el médico, en un juicio o en cualquier situación en la que un error salga caro, hace falta un intérprete profesional."},
+        {"icon": "shield", "title": "Privacidad desde el diseño", "text": "Procesamos el vídeo para traducirlo, no para guardarlo. Todo lo posible debería ejecutarse en tu propio dispositivo."},
+        {"icon": "scale", "title": "Honestidad sobre la precisión", "text": "Probamos con clips con los que el modelo nunca entrena, publicamos resultados solo cuando termina la evaluación y somos claros sobre lo que aún no sabe hacer."},
+        {"icon": "message", "title": "Con la comunidad", "text": "Queremos que personas sordas signantes, intérpretes e investigadores prueben lo que construimos y nos digan en qué falla."},
+        {"icon": "research", "title": "Investigación abierta", "text": "Nuestro código de investigación es público: los métodos se pueden revisar, reproducir y mejorar."}
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Hoja de ruta",
+      "title": "Dónde estamos y hacia dónde vamos.",
+      "items": [
+        {"state": "done", "date": "Otoño 2025", "title": "Primer prototipo de escritorio público", "text": "Un prototipo para Windows que traducía frases cortas en DGS directamente desde una webcam."},
+        {"state": "done", "date": "Primavera 2026", "title": "Modelo de frases con atención", "text": "Un codificador-decodificador BiLSTM con atención multicabeza y un vocabulario de más de 800 glosas en DGS."},
+        {"state": "done", "date": "Abril 2026", "title": "1.er premio en el certamen estatal de Baviera", "text": "Jugend forscht junior, Matemáticas e Informática."},
+        {"state": "now", "date": "Ahora", "title": "Modelo de nueva generación en entrenamiento", "text": "Fusión de tres flujos (cuerpo, manos y boca), entrenada seña a seña con el Public DGS Corpus."},
+        {"state": "next", "date": "Próximamente", "title": "Lanzamiento de los primeros productos", "text": "Nuestros primeros productos para la comunicación diaria entre personas sordas y oyentes.", "cta": "Avisarme"},
+        {"state": "next", "date": "Más adelante", "title": "Más lenguas de señas", "text": "Más allá de la DGS, empezando por la lengua de señas americana (ASL)."}
+      ],
+      "notice_strong": "¿Buscas la aplicación de escritorio?",
+      "notice": "Retiramos el primer prototipo para centrarnos en el próximo SignAI.",
+      "notice_link": "Más información"
+    },
+    "work": {
+      "photo_alt": "Dos mujeres conversan en lengua de señas en una mesa luminosa.",
+      "eyebrow": "Colabora con nosotros",
+      "title": "Ayúdanos a construir SignAI.",
+      "lead": "Trabajamos con investigadores, organizaciones y la comunidad sorda. Elige lo que encaje contigo.",
+      "cards": [
+        {"icon": "research", "title": "Para la investigación", "text": "Conjuntos de datos, evaluación, capacidad de cómputo, modelos. Si trabajas en la comprensión de la lengua de señas, hablemos.", "link": "Proponer una colaboración", "subject": "Colaboración en investigación"},
+        {"icon": "briefcase", "title": "Para organizaciones", "text": "¿Estás pensando en la accesibilidad de tu organización? Cuéntanos dónde falla hoy la comunicación y te diremos con sinceridad si SignAI podría ayudar.", "link": "Contactar", "subject": "Consulta de una organización"},
+        {"icon": "users", "title": "Para la comunidad sorda", "text": "Prueba versiones tempranas y cuéntanos qué te importa. Verás las imperfecciones antes que nadie.", "link": "Participar", "subject": "Comunidad: quiero participar"}
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Preguntas frecuentes.",
+      "lead": "¿No encuentras lo que buscas? Escribe a <a href='mailto:hello@signai.dev'>hello@signai.dev</a>.",
+      "items": [
+        {"q": "¿Qué es SignAI?", "a": "SignAI es un sistema de inteligencia artificial que reconoce la lengua de señas (también llamada lengua de signos) en un vídeo normal y la traduce a texto en tiempo real. Por ahora funciona con la lengua de señas alemana (DGS, Deutsche Gebärdensprache). Lo estamos convirtiendo en productos para conversaciones cotidianas entre personas sordas y oyentes."},
+        {"q": "¿Cuándo estará disponible SignAI?", "a": "Estamos entrenando el próximo modelo y preparando los primeros productos. <a href='#updates'>Suscríbete a las novedades</a> y te escribiremos el día del lanzamiento."},
+        {"q": "¿Dónde puedo descargar la aplicación de escritorio de SignAI?", "a": "El prototipo de escritorio de primera generación para Windows se ha retirado y las descargas están en pausa mientras construimos el próximo SignAI. <a href='/es/descarga'>Más información</a>."},
+        {"q": "¿Qué lenguas de señas admite SignAI?", "a": "SignAI está entrenado con la lengua de señas alemana (DGS). Otras lenguas de señas, empezando por la lengua de señas americana (ASL), forman parte de nuestra hoja de ruta."},
+        {"q": "¿SignAI sustituirá a los intérpretes de lengua de señas?", "a": "No. Para citas médicas, asuntos legales y cualquier situación en la que un error salga caro, hace falta un intérprete profesional. SignAI es para los momentos en los que no hay ningún intérprete, que son la mayoría."},
+        {"q": "¿Qué precisión tiene SignAI?", "a": "Nuestro modelo de frases actual abarca un vocabulario de más de 800 glosas en DGS y traduce frases cortas de hasta unas 15 señas. Funciona mejor con un signado claro y buena iluminación. El modelo de nueva generación se prueba con un conjunto de clips reservado, con el que nunca entrena; publicaremos los resultados cuando termine la evaluación."},
+        {"q": "¿Cómo protege SignAI la privacidad?", "a": "Recogemos lo mínimo posible. El vídeo se procesa para generar una traducción y no se guarda por defecto. Siempre que se pueda, queremos que el reconocimiento se ejecute en tu propio dispositivo. Nunca usamos tus datos para investigación sin tu consentimiento explícito."},
+        {"q": "¿SignAI es de código abierto?", "a": "Nuestro código de investigación está disponible públicamente en <a href='https://github.com/Stefanos0710/SignAI' rel='noopener'>GitHub</a> con una licencia no comercial. Para uso comercial, licencias o colaboraciones, contáctanos."},
+        {"q": "¿Cómo puedo colaborar con SignAI?", "a": "Buscamos socios de investigación para datos, evaluación y cómputo, organizaciones comprometidas con la accesibilidad y miembros de la comunidad sorda que quieran ayudar a dar forma a lo que construimos. Escribe a <a href='mailto:hello@signai.dev'>hello@signai.dev</a>."}
+      ]
+    },
+    "photo_credit": "Fotos y vídeo: cottonbro studio, RDNE Stock project y SHVETS production en <a href='https://www.pexels.com/' rel='noopener' target='_blank'>Pexels</a>.",
+    "sources_title": "Fuentes",
+    "sources": [
+      "World Federation of the Deaf (Federación Mundial de Personas Sordas). <a href='https://wfdeaf.org/our-work/' rel='noopener' target='_blank'>wfdeaf.org</a>",
+      "Deutscher Gehörlosen-Bund e.V. (Federación Alemana de Personas Sordas). <a href='https://www.gehoerlosen-bund.de/' rel='noopener' target='_blank'>gehoerlosen-bund.de</a>",
+      "Behindertengleichstellungsgesetz (BGG), § 6: la lengua de señas alemana está reconocida como lengua propia.",
+      "Vídeos en lengua de signos de la demo: SignDict, Henrike Maria Bartsch / gebaerdenlernen.de, licencia CC BY-NC-SA 3.0 DE. <a href='https://signdict.org' rel='noopener' target='_blank'>signdict.org</a>",
+      "Vídeos en lengua de signos de la demo: RWTH-PHOENIX-Weather 2014 T, Universidad RWTH de Aquisgrán (conjunto de datos de investigación). <a href='https://www-i6.informatik.rwth-aachen.de/~koller/RWTH-PHOENIX-2014-T/' rel='noopener' target='_blank'>rwth-aachen.de</a>"
+    ]
+  },
+  "technology": {
+    "title": "SignAI: cómo la IA reconoce la lengua de señas",
+    "description": "Cómo SignAI reconoce la lengua de señas: flujos de cuerpo, manos y boca fusionados en un solo modelo, entrenado con el Public DGS Corpus y leído seña a seña hasta la frase.",
+    "og_title": "La tecnología detrás de SignAI",
+    "crumb": "Tecnología",
+    "eyebrow": "Tecnología",
+    "h1": "La tecnología detrás de <em>SignAI.</em>",
+    "lead": "La lengua de señas usa las manos, la cara, el cuerpo y el espacio alrededor de quien signa, todo a la vez. SignAI lee estos canales juntos: tres flujos, fusionados en un solo modelo.",
+    "hero_meta": [
+      "Cuerpo, manos y boca",
+      "Entrenado con el Public DGS Corpus",
+      "Seña a seña hasta la frase"
+    ],
+    "pipeline": {
+      "eyebrow": "Proceso",
+      "title": "De los píxeles a las frases.",
+      "lead": "Cinco etapas, del vídeo sin procesar al texto legible.",
+      "photo_alt": "Una mujer en una cafetería signa en una videollamada con su tableta.",
+      "steps": [
+        {
+          "icon": "camera",
+          "title": "Vídeo",
+          "text": "Vídeo RGB estándar desde una webcam o un móvil."
+        },
+        {
+          "icon": "eye",
+          "title": "Puntos y regiones",
+          "text": "49 puntos del cuerpo y las manos por fotograma, más recortes de ambas manos y de la boca."
+        },
+        {
+          "icon": "layers",
+          "title": "Tres flujos",
+          "text": "Movimiento, forma de la mano y patrones de la boca, cada uno con su propio codificador."
+        },
+        {
+          "icon": "letters",
+          "title": "Seña",
+          "text": "Las características fusionadas se clasifican como una seña, escrita como glosa."
+        },
+        {
+          "icon": "captions",
+          "title": "Frase",
+          "text": "Seña a seña, las glosas se convierten en una frase legible."
+        }
+      ]
+    },
+    "model": {
+      "eyebrow": "Modelo de nueva generación",
+      "title": "Tres flujos, fusionados en uno.",
+      "lead": "Muchas señas comparten el mismo movimiento de manos y solo se diferencian en la forma de la mano, la expresión facial o la vocalización. Por eso nuestro modelo da a cada canal su propio codificador y luego fusiona los tres.",
+      "streams": [
+        {
+          "icon": "body",
+          "dim": "384-d",
+          "title": "Cuerpo y movimiento",
+          "text": "Siete puntos de la parte superior del cuerpo y 21 puntos por mano se convierten en mapas de calor por punto a lo largo de 32 fotogramas. Una red convolucional 3D (SlowOnly ResNet-50) lee de ellos la ubicación, el movimiento y el ritmo."
+        },
+        {
+          "icon": "hand",
+          "dim": "768-d",
+          "title": "Manos",
+          "text": "Los recortes de ambas manos pasan por un vision transformer DINOv3 congelado. Un pequeño transformer temporal, compartido por ambas manos, sigue su forma y orientación en el tiempo."
+        },
+        {
+          "icon": "face",
+          "dim": "384-d",
+          "title": "Cara y boca",
+          "text": "Los recortes de la boca siguen el mismo diseño para captar vocalizaciones y expresión facial. Sin ellos, señas con el mismo movimiento de manos parecen iguales."
+        }
+      ],
+      "fusion_strong": "Fusión.",
+      "fusion": "Las tres características se unen en un vector de 1.536 dimensiones y se clasifican juntas. DINOv3 se ejecuta una sola vez, sin conexión, así que el entrenamiento solo usa características en caché y es rápido y reproducible."
+    },
+    "translation": {
+      "eyebrow": "Traducción de frases",
+      "title": "De señas sueltas a frases.",
+      "p1": "El modelo de palabras es la base. Reconoce una seña cada vez y la nombra con una glosa, la etiqueta escrita que usa la lingüística para una seña.",
+      "p2": "Para frases, el mismo modelo lee una frase signada seña a seña. El resultado es una secuencia de glosas, como MORGEN REGEN NORD.",
+      "p3": "Las glosas siguen la gramática de la lengua de señas, no la del alemán. Un paso lingüístico aparte, en el que trabajaremos a continuación, las convertirá en frases fluidas.",
+      "code_title": "modelo de palabras — simplificado",
+      "code_output": "Mañana lloverá en el norte.",
+      "code_aria": "Arquitectura simplificada del modelo de palabras",
+      "flow_signs": "Signos",
+      "flow_glosses": "Glosas",
+      "flow_sentence": "Frase",
+      "flow_next": "Siguiente"
+    },
+    "data": {
+      "eyebrow": "Datos y evaluación",
+      "title": "Aprendido de conversaciones reales.",
+      "lead": "SignAI no aprende de listas de palabras escenificadas, sino de personas sordas que signan con naturalidad, cortadas en señas sueltas. Publicaremos la precisión cuando termine la evaluación.",
+      "cards": [
+        {
+          "icon": "users",
+          "title": "Datos de signado natural",
+          "text": "Entrenamos con el Public DGS Corpus: conversaciones entre personas sordas signantes de toda Alemania. Sus anotaciones expertas marcan dónde empieza y termina cada seña, así que cada seña se convierte en su propio clip."
+        },
+        {
+          "icon": "target",
+          "title": "Preprocesado a prueba de cámara",
+          "text": "Los puntos clave se centran en los hombros, se escalan según su anchura, se interpolan donde faltan y se suavizan en el tiempo. Cada clip se lleva a 32 fotogramas."
+        },
+        {
+          "icon": "spark",
+          "title": "Justo con todos los tonos de piel y espacios",
+          "text": "Los recortes de manos y boca se corrigen de color (Shades of Gray) para que la luz y el tono de piel influyan menos. Estamos preparando aumentación para tono de piel, color, encuadre y desenfoque."
+        },
+        {
+          "icon": "database",
+          "title": "Un conjunto de prueba limpio",
+          "text": "Las señas con menos de cinco ejemplos se dejan fuera. El resto se reparte por seña en entrenamiento, validación y prueba, y el modelo nunca entrena con el conjunto de prueba."
+        }
+      ]
+    },
+    "research": {
+      "eyebrow": "Hoja de ruta de investigación",
+      "title": "En qué trabajaremos a continuación.",
+      "items": [
+        {
+          "icon": "letters",
+          "title": "Dactilología",
+          "text": "Un clasificador dedicado al alfabeto manual reconoce nombres, lugares y términos sin una seña establecida."
+        },
+        {
+          "icon": "database",
+          "title": "Miles de señas",
+          "text": "Pasar de cientos a miles de glosas con conjuntos de datos más grandes y más cómputo."
+        },
+        {
+          "icon": "layers",
+          "title": "Signado continuo",
+          "text": "Detectar dónde termina una seña y empieza la siguiente, para que el modelo de palabras lea frases completas por sí solo."
+        },
+        {
+          "icon": "message",
+          "title": "Texto fluido",
+          "text": "Convertir secuencias de glosas en lengua escrita natural y gramatical."
+        },
+        {
+          "icon": "languages",
+          "title": "Más lenguas de señas",
+          "text": "Más allá de la DGS, empezando por la lengua de señas americana (ASL)."
+        },
+        {
+          "icon": "monitor",
+          "title": "Inferencia en el dispositivo",
+          "text": "Modelos eficientes que se ejecutan localmente, con menos latencia y más privacidad."
+        }
+      ],
+      "stack_label": "Desarrollado con"
+    },
+    "open": {
+      "title": "Investigación abierta.",
+      "text": "Nuestro código de investigación es público. Si trabajas en lengua de señas, visión por computador o accesibilidad, escríbenos.",
+      "cta": "Colaborar con nosotros",
+      "github": "Ver en GitHub"
+    }
+  },
+  "download": {
+    "title": "Descargar SignAI — La nueva generación está en desarrollo",
+    "description": "Las descargas de la aplicación de escritorio de SignAI están en pausa mientras desarrollamos la nueva generación. Suscríbete para enterarte del lanzamiento.",
+    "og_title": "El próximo SignAI está en camino",
+    "crumb": "Descarga",
+    "pill": "Descargas en pausa",
+    "h1": "El próximo SignAI <em>está en camino.</em>",
+    "lead": "Nuestro primer prototipo de escritorio demostró que la traducción de la lengua de señas a nivel de frase funciona con una webcam normal. Lo hemos retirado para volcarnos en la siguiente versión: un modelo más preciso que lee juntos el cuerpo, las manos y la boca, y productos para conversaciones reales entre personas sordas y oyentes.",
+    "cta_primary": "Avisarme del lanzamiento",
+    "cta_secondary": "Conocer la tecnología",
+    "status_eyebrow": "Estado",
+    "status_title": "Qué está pasando ahora.",
+    "cards": [
+      {"icon": "monitor", "tag": "Retirado", "tag_class": "tag-muted", "title": "SignAI Desktop para Windows", "text": "El prototipo de primera generación (v0.1 – v1.1, 2025). Traducía frases cortas en DGS desde una webcam y ya no se distribuye.", "button": "Descarga en pausa"},
+      {"icon": "layers", "tag": "En entrenamiento", "tag_class": "tag-live", "title": "Modelo de nueva generación", "text": "Un modelo de tres flujos que lee juntos el cuerpo, las manos y la boca, entrenado con el Public DGS Corpus.", "link": "Conocer la tecnología", "href": "technology"},
+      {"icon": "spark", "tag": "En desarrollo", "tag_class": "tag-live", "title": "Primeros productos", "text": "Productos para la comunicación diaria entre personas sordas y oyentes. Suscríbete para conocerlos antes que nadie.", "link": "Avisarme", "href": "#updates"}
+    ]
+  },
+  "notfound": {
+    "title": "Página no encontrada — SignAI",
+    "description": "La página que buscas no existe. Continúa a SignAI, la IA de traducción de lengua de señas en tiempo real.",
+    "eyebrow": "Error 404",
+    "h1": "Esta página <em>no existe.</em>",
+    "lead": "Puede que el enlace esté desactualizado o que la página se haya movido.",
+    "cta_primary": "Volver al inicio",
+    "cta_secondary": "Recibir novedades"
+  }
+}

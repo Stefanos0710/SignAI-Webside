@@ -1,0 +1,387 @@
+{
+  "meta": {
+    "lang": "de",
+    "locale": "de_DE",
+    "name": "Deutsch",
+    "short": "DE",
+    "banner": "Diese Seite gibt es auch auf Deutsch.",
+    "banner_link": "Zur deutschen Version"
+  },
+  "common": {
+    "skip": "Zum Inhalt springen",
+    "menu_open": "Menü öffnen",
+    "menu_close": "Menü schließen",
+    "language": "Sprache",
+    "home": "Startseite",
+    "dismiss": "Schließen",
+    "cookie_text": "Wir nutzen Google-Analytics-Cookies, um die Website zu verbessern.",
+    "cookie_accept": "Akzeptieren",
+    "cookie_decline": "Ablehnen",
+    "cookie_settings": "Cookie-Einstellungen",
+    "org_description": "SignAI entwickelt künstliche Intelligenz, die Gebärdensprache in normalen Videos erkennt und in Text übersetzt, beginnend mit der Deutschen Gebärdensprache (DGS).",
+    "og_alt": "SignAI: Gebärdensprache, in Echtzeit verstanden."
+  },
+  "nav": {
+    "mission": "Mission",
+    "technology": "Technologie",
+    "roadmap": "Roadmap",
+    "collaborate": "Mitmachen",
+    "faq": "FAQ",
+    "cta": "Updates erhalten"
+  },
+  "footer": {
+    "tagline": "KI, die Gebärdensprache erkennt und als Text ausgibt, damit gehörlose und hörende Menschen sich verstehen, ohne aufs Dolmetschen zu warten.",
+    "col_signai": "SignAI",
+    "col_research": "Forschung",
+    "col_contact": "Kontakt",
+    "col_language": "Sprache",
+    "mission": "Mission",
+    "roadmap": "Roadmap",
+    "downloads": "Downloads",
+    "updates": "Updates erhalten",
+    "technology": "Technologie",
+    "data": "Daten & Evaluation",
+    "github": "Quellcode auf GitHub",
+    "partnerships": "Partnerschaften",
+    "press": "Presse",
+    "support": "Support",
+    "rights": "Alle Rechte vorbehalten.",
+    "made_in": "Entwickelt in Deutschland"
+  },
+  "signup": {
+    "eyebrow": "Auf dem Laufenden bleiben",
+    "title": "Erfahren Sie es zuerst.",
+    "lead": "Wir schreiben Ihnen zum Launch und ab und zu, wenn die Forschung einen Meilenstein erreicht. Sonst nichts.",
+    "email_label": "E-Mail-Adresse",
+    "email_placeholder": "name@beispiel.de",
+    "consent": "Ich bin damit einverstanden, dass SignAI meine E-Mail-Adresse speichert, um mich über den Launch und Neuigkeiten zu informieren. Ich kann mich jederzeit abmelden.",
+    "button": "Benachrichtigen",
+    "sending": "Wird gesendet …",
+    "success_title": "Sie sind auf der Liste.",
+    "success": "Danke. Wir melden uns, wenn es etwas zu erzählen gibt.",
+    "error_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "error_consent": "Bitte bestätigen Sie, dass wir Ihre E-Mail-Adresse speichern dürfen.",
+    "error_generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an hello@signai.dev.",
+    "fallback": "Ihr E-Mail-Programm öffnet sich mit der fertigen Nachricht. Sie müssen nur noch auf Senden drücken.",
+    "mail_subject": "Bitte benachrichtigen, wenn SignAI startet",
+    "mail_body": "Bitte benachrichtigen Sie mich, sobald SignAI startet.",
+    "perks": ["Ankündigung zum Launch", "Einladungen zu frühen Versionen", "Meilensteine aus der Forschung"]
+  },
+  "home": {
+    "title": "SignAI – KI-Übersetzer für Gebärdensprache (DGS) in Echtzeit",
+    "description": "SignAI entwickelt KI, die Gebärdensprache über eine normale Kamera erkennt und in Text übersetzt. Wir beginnen mit der Deutschen Gebärdensprache (DGS).",
+    "og_title": "SignAI – Gebärdensprache, in Echtzeit verstanden",
+    "h1": "Gebärdensprache, verstanden in <em>Echtzeit.</em>",
+    "lead": "SignAI erkennt Gebärdensprache über eine ganz normale Kamera und schreibt mit, was gebärdet wurde. Wir beginnen mit der Deutschen Gebärdensprache und bauen Produkte für die alltäglichen Gespräche, bei denen niemand zum Dolmetschen da ist.",
+    "cta_primary": "Zum Launch benachrichtigen",
+    "cta_secondary": "Zur Technologie",
+    "scroll": "Mehr entdecken",
+    "hero_meta": ["DGS", "Normale Kamera", "Datenschutz by Design"],
+    "demo": {
+      "title": "Live-Untertitel",
+      "live": "Konzept",
+      "pair": "DGS → Deutsch",
+      "texts": ["Das ist übrigens unser Studio – da unten stehe ich gerade.", "Immer cool bleiben!", "Wer da noch Urlaub hat, kommt also ins Schwitzen.", "Und vom knackigen Winter sind wir noch rund dreitausend Kilometer entfernt.", "Moment, dazu würde ich gern etwas sagen.", "Dauerregen, dazu nur sechs bis acht Grad – was für ein Tag. Jetzt kann es eigentlich nur noch besser werden.", "Herzlichen Glückwunsch zum Geburtstag!", "Und dann wird der Herbst eingeläutet: Er beginnt morgen früh um 5:09 Uhr – ganz offiziell laut Kalender.", "Ah, jetzt hab ich’s verstanden!", "Wie geht’s?"],
+      "errors": [[["Studio", "Fernseher", "next"], ["unten", "oben", "end"]], [], [["Urlaub", "Ferien", "next"]], [["Winter", "Schnee", "next"], ["dreitausend", "dreihundert", "next"]], [["sagen.", "fragen.", "end"]], [["Dauerregen,", "Starkregen,", "next"], ["sechs", "sieben", "next"]], [], [["Herbst", "Winter", "next"], ["5:09", "5:19", "end"]], [["verstanden!", "gesehen!", "end"]], []],
+      "timing": [[0, 0, 0, 1, 1, 3, 3, 4, 4, 5], null, [0, 0, 1, 1, 2, 3, 4, 4, 4], [1, 2, 3, 3, 3, 3, 3, 4, 5, 7, 8], null, [1, 2, 2, 2, 3, 4, 5, 6, 6, 6, 6, 6, 7, 7, 7, 8, 8, 9, 10], null, [0, 2, 3, 3, 3, 4, 5, 5, 6, 7, 8, 9, 9, 11, 12, 12, 12], null, null],
+      "note": "Konzept: So soll SignAI einmal übersetzen. Bewegungen aus echten DGS-Videos<sup><a href='#source-4'>4</a>,<a href='#source-5'>5</a></sup>, Übersetzungen vorab hinterlegt."
+    },
+    "award_mark": "1.",
+    "award_title": "1. Platz, Mathematik & Informatik",
+    "award_sub": "Jugend forscht junior · Landeswettbewerb Bayern 2026",
+    "featured": "Bekannt aus",
+    "why": {
+      "photo_alt": "Zwei Freunde unterhalten sich beim Essen in einem Café in Gebärdensprache.",
+      "eyebrow": "Warum es wichtig ist",
+      "title": "Kommunikation sollte nicht davon abhängen, ob gerade jemand dolmetschen kann.",
+      "lead": "Gebärdensprachen sind vollwertige Sprachen mit eigener Grammatik, eigenem Wortschatz und regionalen Varianten. Aber ein Gespräch im Büro, eine Vorlesung, eine kurze Frage am Schalter: Der Alltag läuft fast immer über Lautsprache. Gebärdensprachdolmetscherinnen und -dolmetscher sind unverzichtbar. Es gibt nur bei Weitem nicht genug, um bei all diesen Momenten dabei zu sein.",
+      "stats": [
+        {"num": "70 Mio.+", "label": "gehörlose Menschen weltweit, die mehr als 300 verschiedene Gebärdensprachen verwenden."},
+        {"num": "~80.000", "label": "gehörlose Menschen in Deutschland. Für viele von ihnen ist DGS die Erstsprache."},
+        {"num": "2002", "label": "wurde die Deutsche Gebärdensprache gesetzlich als eigenständige Sprache anerkannt."}
+      ]
+    },
+    "mission": {
+      "photo_alt": "Zwei Menschen gebärden auf einer winterlichen Straße miteinander, die Hände im Fokus.",
+      "eyebrow": "Woran wir arbeiten",
+      "title": "Gespräche, die nicht aufs Dolmetschen warten müssen.",
+      "text": "Heute laufen viele Gespräche zwischen gehörlosen und hörenden Menschen über Zettel oder das Warten auf Dolmetscher. Wir entwickeln Produkte, mit denen jede Person ihre eigene Sprache nutzt, nur mit einer Kamera dazwischen.",
+      "points": [
+        {"icon": "languages", "title": "In der eigenen Sprache", "text": "Gebärden Sie, wie Sie es immer tun. Den Text übernimmt SignAI."},
+        {"icon": "clock", "title": "In Echtzeit", "text": "Nichts zu buchen, nichts abzuwarten. Der Text erscheint, während Sie gebärden."},
+        {"icon": "camera", "title": "Mit dem, was Sie haben", "text": "Keine Handschuhe, Sensoren oder Spezialhardware. Eine normale Kamera genügt."}
+      ],
+      "cta": "Zuerst informiert werden"
+    },
+    "how": {
+      "photo_alt": "Ein Mann gebärdet in einem Videoanruf, sein Gegenüber gebärdet in die Laptopkamera.",
+      "eyebrow": "So funktioniert es",
+      "title": "Von der Kamera zum Gespräch.",      "steps": [
+        {"title": "Erfassen", "text": "Eine normale Webcam oder Handykamera. Mehr braucht es nicht."},
+        {"title": "Verstehen", "text": "SignAI verfolgt Hände, Körper, Gesicht und Mund. In Gebärdensprache tragen alle vier Bedeutung."},
+        {"title": "Übersetzen", "text": "Ein Sequenzmodell macht aus dem Gesehenen Glossen und aus Glossen lesbare Sätze."},
+        {"title": "Lesen", "text": "Die Übersetzung erscheint als einfacher Text, direkt beim Gebärden."}
+      ]
+    },
+    "tech": {
+      "eyebrow": "Technologie",
+      "title": "Gebaut für die Art, wie Gebärdensprache wirklich funktioniert.",
+      "text": "Die Hände sind nur ein Teil davon. Mimik markiert Fragen, Mundbilder unterscheiden ansonsten identische Gebärden, und Bewegung im Raum trägt Grammatik. Unser Modell der nächsten Generation liest all das gleichzeitig.",
+      "cta": "Zur Technologie",
+      "streams": [
+        {"icon": "body", "title": "Körper & Bewegung", "text": "Körper-Keypoints über die Zeit erfassen Ort, Bewegung und Rhythmus."},
+        {"icon": "hand", "title": "Hände", "text": "Ein Vision Transformer liest Handform und Handstellung beider Hände."},
+        {"icon": "face", "title": "Gesicht & Mund", "text": "Mundbilder und Mimik klären Bedeutungen, die die Hände allein nicht tragen."},
+        {"icon": "layers", "title": "Fusion", "text": "Alle drei Ströme verschmelzen zu einer gemeinsamen Repräsentation des Gebärdeten."}
+      ]
+    },
+    "principles": {
+      "eyebrow": "Unsere Prinzipien",
+      "title": "Wie wir arbeiten.",
+      "items": [
+        {"icon": "languages", "title": "Gebärdensprache zuerst", "text": "DGS ist eine vollwertige Sprache mit eigener Grammatik. Wir behandeln sie nicht als Sammlung von Gesten, die man entschlüsselt."},
+        {"icon": "users", "title": "Ergänzung zu Dolmetschenden", "text": "SignAI ist für den Alltag gedacht. Beim Arzt, vor Gericht oder überall sonst, wo ein Fehler teuer wird, braucht es professionelle Dolmetscherinnen und Dolmetscher."},
+        {"icon": "shield", "title": "Datenschutz by Design", "text": "Wir verarbeiten Video, um es zu übersetzen, nicht um es zu behalten. So viel wie möglich soll direkt auf Ihrem Gerät laufen."},
+        {"icon": "scale", "title": "Ehrlich bei der Genauigkeit", "text": "Wir testen mit Clips, auf denen das Modell nie trainiert, veröffentlichen Ergebnisse erst nach abgeschlossener Auswertung und sagen offen, was es noch nicht kann."},
+        {"icon": "message", "title": "Gemeinsam mit der Community", "text": "Gehörlose Gebärdende, Dolmetschende und Forschende sollen testen, was wir bauen, und uns sagen, wo es falsch liegt."},
+        {"icon": "research", "title": "Offene Forschung", "text": "Unser Forschungscode ist öffentlich, damit sich Methoden prüfen, reproduzieren und verbessern lassen."}
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "Wo wir stehen und wohin wir gehen.",
+      "items": [
+        {"state": "done", "date": "Herbst 2025", "title": "Erster öffentlicher Desktop-Prototyp", "text": "Ein Windows-Prototyp, der kurze DGS-Sätze direkt von der Webcam übersetzte."},
+        {"state": "done", "date": "Frühjahr 2026", "title": "Satzmodell mit Attention", "text": "Ein BiLSTM-Encoder-Decoder mit Multi-Head-Attention und einem Wortschatz von über 800 DGS-Glossen."},
+        {"state": "done", "date": "April 2026", "title": "1. Platz beim bayerischen Landeswettbewerb", "text": "Jugend forscht junior, Mathematik & Informatik."},
+        {"state": "now", "date": "Jetzt", "title": "Modell der nächsten Generation im Training", "text": "Drei-Strom-Fusion aus Körper, Händen und Mund, Gebärde für Gebärde trainiert auf dem Public DGS Corpus."},
+        {"state": "next", "date": "Als Nächstes", "title": "Erster Produkt-Launch", "text": "Unsere ersten Produkte für die alltägliche Kommunikation zwischen gehörlosen und hörenden Menschen.", "cta": "Benachrichtigen lassen"},
+        {"state": "next", "date": "Später", "title": "Weitere Gebärdensprachen", "text": "Über DGS hinaus, beginnend mit der American Sign Language (ASL)."}
+      ],
+      "notice_strong": "Sie suchen die Desktop-App?",
+      "notice": "Den ersten Prototyp haben wir eingestellt, um uns auf das nächste SignAI zu konzentrieren.",
+      "notice_link": "Mehr erfahren"
+    },
+    "work": {
+      "photo_alt": "Zwei Frauen unterhalten sich an einem hellen Tisch in Gebärdensprache.",
+      "eyebrow": "Zusammenarbeit",
+      "title": "Bauen Sie SignAI mit uns.",
+      "lead": "Wir arbeiten mit Forschenden, Organisationen und der Gehörlosen-Community. Suchen Sie sich aus, was zu Ihnen passt.",
+      "cards": [
+        {"icon": "research", "title": "Für die Forschung", "text": "Datensätze, Evaluation, Rechenleistung, Modelle. Wenn Sie am Verstehen von Gebärdensprache arbeiten, sollten wir reden.", "link": "Kooperation anfragen", "subject": "Forschungskooperation"},
+        {"icon": "briefcase", "title": "Für Organisationen", "text": "Sie denken über Barrierefreiheit in Ihrer Organisation nach? Erzählen Sie uns, wo die Kommunikation heute hakt, und wir sagen Ihnen ehrlich, ob SignAI helfen könnte.", "link": "Kontakt aufnehmen", "subject": "Anfrage einer Organisation"},
+        {"icon": "users", "title": "Für die Gehörlosen-Community", "text": "Testen Sie frühe Versionen und sagen Sie uns, was Ihnen wichtig ist. Die Ecken und Kanten sehen Sie vor allen anderen.", "link": "Mitmachen", "subject": "Community: Ich möchte mitmachen"}
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Häufige Fragen.",
+      "lead": "Ihre Frage ist nicht dabei? Schreiben Sie an <a href='mailto:hello@signai.dev'>hello@signai.dev</a>.",
+      "items": [
+        {"q": "Was ist SignAI?", "a": "SignAI ist ein KI-System, das Gebärdensprache in normalen Videos erkennt und in Echtzeit in Text übersetzt. Im Moment arbeitet es mit der Deutschen Gebärdensprache (DGS). Daraus entstehen Produkte für alltägliche Gespräche zwischen gehörlosen und hörenden Menschen."},
+        {"q": "Wann ist SignAI verfügbar?", "a": "Wir trainieren gerade das nächste Modell und bereiten die ersten Produkte vor. <a href='#updates'>Melden Sie sich für Updates an</a>, dann schreiben wir Ihnen am Tag des Launches."},
+        {"q": "Wo kann ich die SignAI-Desktop-App herunterladen?", "a": "Der Desktop-Prototyp der ersten Generation für Windows wurde eingestellt, und Downloads sind pausiert, während wir das nächste SignAI entwickeln. <a href='/de/download'>Mehr erfahren</a>."},
+        {"q": "Welche Gebärdensprachen unterstützt SignAI?", "a": "SignAI ist auf die Deutsche Gebärdensprache (DGS) trainiert. Weitere Gebärdensprachen, beginnend mit der American Sign Language (ASL), stehen auf unserer Roadmap."},
+        {"q": "Ersetzt SignAI Gebärdensprachdolmetscher?", "a": "Nein. Bei Arztterminen, rechtlichen Angelegenheiten und überall, wo ein Fehler teuer wird, braucht es professionelle Dolmetscherinnen und Dolmetscher. SignAI ist für die Momente gedacht, in denen niemand zum Dolmetschen da ist. Das sind die meisten."},
+        {"q": "Wie genau ist SignAI?", "a": "Unser aktuelles Satzmodell umfasst einen Wortschatz von über 800 DGS-Glossen und übersetzt kurze Sätze mit bis zu etwa 15 Gebärden. Am besten funktioniert es bei deutlichem Gebärden und guter Beleuchtung. Das Modell der nächsten Generation wird mit zurückgehaltenen Clips getestet, auf denen es nie trainiert; die Ergebnisse veröffentlichen wir nach Abschluss der Evaluation."},
+        {"q": "Wie geht SignAI mit Datenschutz um?", "a": "Wir erheben so wenig wie möglich. Video wird verarbeitet, um eine Übersetzung zu erzeugen, und standardmäßig nicht gespeichert. Wo möglich, soll die Erkennung direkt auf Ihrem Gerät laufen. Für die Forschung nutzen wir Ihre Daten nie ohne Ihre ausdrückliche Einwilligung."},
+        {"q": "Ist SignAI Open Source?", "a": "Unser Forschungscode ist öffentlich auf <a href='https://github.com/Stefanos0710/SignAI' rel='noopener'>GitHub</a> unter einer nicht-kommerziellen Lizenz verfügbar. Für kommerzielle Nutzung, Lizenzen oder Partnerschaften kontaktieren Sie uns bitte."},
+        {"q": "Wie kann ich mit SignAI zusammenarbeiten?", "a": "Wir suchen Forschungspartner für Datensätze, Evaluation und Rechenleistung, Organisationen, denen Barrierefreiheit wichtig ist, und Menschen aus der Gehörlosen-Community, die mitgestalten möchten. Schreiben Sie an <a href='mailto:hello@signai.dev'>hello@signai.dev</a>."}
+      ]
+    },
+    "photo_credit": "Fotos und Video: cottonbro studio, RDNE Stock project und SHVETS production auf <a href='https://www.pexels.com/' rel='noopener' target='_blank'>Pexels</a>.",
+    "sources_title": "Quellen",
+    "sources": [
+      "World Federation of the Deaf. <a href='https://wfdeaf.org/our-work/' rel='noopener' target='_blank'>wfdeaf.org</a>",
+      "Deutscher Gehörlosen-Bund e.V. <a href='https://www.gehoerlosen-bund.de/' rel='noopener' target='_blank'>gehoerlosen-bund.de</a>",
+      "Behindertengleichstellungsgesetz (BGG), § 6: Die Deutsche Gebärdensprache ist als eigenständige Sprache anerkannt.",
+      "Gebärdenvideos der Demo: SignDict, Henrike Maria Bartsch / gebaerdenlernen.de, Lizenz CC BY-NC-SA 3.0 DE. <a href='https://signdict.org' rel='noopener' target='_blank'>signdict.org</a>",
+      "Gebärdenvideos der Demo: RWTH-PHOENIX-Weather 2014 T, RWTH Aachen (Forschungsdatensatz). <a href='https://www-i6.informatik.rwth-aachen.de/~koller/RWTH-PHOENIX-2014-T/' rel='noopener' target='_blank'>rwth-aachen.de</a>"
+    ]
+  },
+  "technology": {
+    "title": "SignAI Technologie – Wie KI Gebärdensprache erkennt",
+    "description": "So erkennt SignAI Gebärdensprache: Körper-, Hand- und Mund-Streams in einem Modell, trainiert auf dem Public DGS Corpus und Gebärde für Gebärde zu Sätzen gelesen.",
+    "og_title": "Die Technologie hinter SignAI",
+    "crumb": "Technologie",
+    "eyebrow": "Technologie",
+    "h1": "Die Technologie hinter <em>SignAI.</em>",
+    "lead": "Gebärdensprache nutzt Hände, Gesicht, Körper und den Raum um die gebärdende Person, alles gleichzeitig. SignAI liest diese Kanäle zusammen: drei Streams, fusioniert in einem Modell.",
+    "hero_meta": [
+      "Körper, Hände und Mund",
+      "Trainiert auf dem Public DGS Corpus",
+      "Gebärde für Gebärde zum Satz"
+    ],
+    "pipeline": {
+      "eyebrow": "Pipeline",
+      "title": "Von Pixeln zu Sätzen.",
+      "lead": "Fünf Stufen, vom rohen Video bis zum lesbaren Text.",
+      "photo_alt": "Eine Frau im Café gebärdet in einem Videoanruf auf ihrem Tablet.",
+      "steps": [
+        {
+          "icon": "camera",
+          "title": "Video",
+          "text": "Normales RGB-Video von Webcam oder Smartphone."
+        },
+        {
+          "icon": "eye",
+          "title": "Landmarken & Ausschnitte",
+          "text": "49 Körper- und Handlandmarken pro Bild, dazu Ausschnitte beider Hände und des Mundes."
+        },
+        {
+          "icon": "layers",
+          "title": "Drei Streams",
+          "text": "Bewegung, Handform und Mundbild, jeweils mit eigenem Encoder."
+        },
+        {
+          "icon": "letters",
+          "title": "Gebärde",
+          "text": "Die fusionierten Merkmale werden als eine Gebärde erkannt und als Glosse ausgegeben."
+        },
+        {
+          "icon": "captions",
+          "title": "Satz",
+          "text": "Gebärde für Gebärde werden die Glossen zu einem lesbaren Satz."
+        }
+      ]
+    },
+    "model": {
+      "eyebrow": "Modell der nächsten Generation",
+      "title": "Drei Ströme, zusammengeführt.",
+      "lead": "Viele Gebärden teilen dieselbe Handbewegung und unterscheiden sich nur in Handform, Mimik oder Mundbild. Deshalb bekommt in unserem Modell jeder Kanal einen eigenen Encoder, danach werden die drei fusioniert.",
+      "streams": [
+        {
+          "icon": "body",
+          "dim": "384-d",
+          "title": "Körper & Bewegung",
+          "text": "Sieben Oberkörperpunkte und 21 Punkte pro Hand werden über 32 Bilder zu Heatmaps pro Landmarke. Ein 3D-Convolutional-Netzwerk (SlowOnly ResNet-50) liest daraus Ort, Bewegung und Rhythmus."
+        },
+        {
+          "icon": "hand",
+          "dim": "768-d",
+          "title": "Hände",
+          "text": "Ausschnitte beider Hände laufen durch einen eingefrorenen DINOv3 Vision Transformer. Ein kleiner zeitlicher Transformer, den sich beide Hände teilen, verfolgt Handform und Ausrichtung über die Zeit."
+        },
+        {
+          "icon": "face",
+          "dim": "384-d",
+          "title": "Gesicht & Mund",
+          "text": "Mundausschnitte durchlaufen denselben Aufbau und erfassen Mundbilder und Mimik. Ohne sie sehen Gebärden mit gleicher Handbewegung identisch aus."
+        }
+      ],
+      "fusion_strong": "Fusion.",
+      "fusion": "Die drei Merkmale werden zu einem 1.536-dimensionalen Vektor verbunden und gemeinsam klassifiziert. DINOv3 läuft einmal offline, so arbeitet das Training nur mit zwischengespeicherten Merkmalen und bleibt schnell und reproduzierbar."
+    },
+    "translation": {
+      "eyebrow": "Übersetzung auf Satzebene",
+      "title": "Von einzelnen Gebärden zu Sätzen.",
+      "p1": "Das Wortmodell ist die Grundlage. Es erkennt jeweils eine Gebärde und benennt sie als Glosse, die schriftliche Bezeichnung, die die Linguistik für eine Gebärde nutzt.",
+      "p2": "Für Sätze liest dasselbe Modell einen gebärdeten Satz Gebärde für Gebärde. Heraus kommt eine Folge von Glossen, etwa MORGEN REGEN NORD.",
+      "p3": "Glossen folgen der Grammatik der Gebärdensprache, nicht der deutschen. Ein eigener Sprachschritt, an dem wir als Nächstes arbeiten, macht daraus flüssige Sätze.",
+      "code_title": "Wortmodell – vereinfacht",
+      "code_output": "Morgen regnet es im Norden.",
+      "code_aria": "Vereinfachte Architektur des Wortmodells",
+      "flow_signs": "Gebärden",
+      "flow_glosses": "Glossen",
+      "flow_sentence": "Satz",
+      "flow_next": "Als Nächstes"
+    },
+    "data": {
+      "eyebrow": "Daten & Evaluation",
+      "title": "Gelernt aus echten Gesprächen.",
+      "lead": "SignAI lernt nicht aus gestellten Wortlisten, sondern von gehörlosen Menschen, die natürlich gebärden, zerlegt in einzelne Gebärden. Genauigkeiten veröffentlichen wir, sobald die Auswertung steht.",
+      "cards": [
+        {
+          "icon": "users",
+          "title": "Natürliche Gebärdensprachdaten",
+          "text": "Wir trainieren auf dem Public DGS Corpus: Gespräche gehörloser Gebärdender aus ganz Deutschland. Seine Expertenannotationen markieren, wo jede Gebärde beginnt und endet, so wird jede Gebärde zu einem eigenen Clip."
+        },
+        {
+          "icon": "target",
+          "title": "Kameraunabhängige Vorverarbeitung",
+          "text": "Keypoints werden auf die Schultern zentriert, nach Schulterbreite skaliert, bei Aussetzern interpoliert und über die Zeit geglättet. Jeder Clip wird auf 32 Bilder gebracht."
+        },
+        {
+          "icon": "spark",
+          "title": "Fair für alle Hauttöne und Räume",
+          "text": "Hand- und Mundausschnitte werden farbkorrigiert (Shades of Gray), damit Licht und Hautton weniger zählen. Augmentation für Hautton, Farbe, Bildausschnitt und Unschärfe ist in Arbeit."
+        },
+        {
+          "icon": "database",
+          "title": "Ein sauberes Test-Set",
+          "text": "Gebärden mit weniger als fünf Beispielen bleiben außen vor. Der Rest wird pro Gebärde in Trainings-, Validierungs- und Test-Set aufgeteilt, und auf dem Test-Set trainiert das Modell nie."
+        }
+      ]
+    },
+    "research": {
+      "eyebrow": "Forschungs-Roadmap",
+      "title": "Woran wir als Nächstes arbeiten.",
+      "items": [
+        {
+          "icon": "letters",
+          "title": "Fingeralphabet",
+          "text": "Ein eigener Klassifikator für das Fingeralphabet erkennt Namen, Orte und Begriffe ohne etablierte Gebärde."
+        },
+        {
+          "icon": "database",
+          "title": "Tausende Gebärden",
+          "text": "Den Wortschatz mit größeren Datensätzen und mehr Rechenleistung von Hunderten auf Tausende Glossen skalieren."
+        },
+        {
+          "icon": "layers",
+          "title": "Fortlaufendes Gebärden",
+          "text": "Erkennen, wo eine Gebärde endet und die nächste beginnt, damit das Wortmodell ganze Sätze selbst lesen kann."
+        },
+        {
+          "icon": "message",
+          "title": "Flüssige Ausgabe",
+          "text": "Aus Glossenfolgen natürliche, grammatisch korrekte Schriftsprache machen."
+        },
+        {
+          "icon": "languages",
+          "title": "Weitere Gebärdensprachen",
+          "text": "Über DGS hinaus, beginnend mit der American Sign Language (ASL)."
+        },
+        {
+          "icon": "monitor",
+          "title": "Inferenz auf dem Gerät",
+          "text": "Effiziente Modelle, die lokal laufen, für geringere Latenz und stärkeren Datenschutz."
+        }
+      ],
+      "stack_label": "Entwickelt mit"
+    },
+    "open": {
+      "title": "Forschung, offen und nachvollziehbar.",
+      "text": "Unser Forschungscode ist öffentlich. Wenn Sie zu Gebärdensprache, Computer Vision oder Barrierefreiheit arbeiten, melden Sie sich.",
+      "cta": "Mit uns kooperieren",
+      "github": "Auf GitHub ansehen"
+    }
+  },
+  "download": {
+    "title": "SignAI Download – Die nächste Generation ist in Entwicklung",
+    "description": "Downloads der SignAI-Desktop-App sind pausiert, während wir die nächste Generation entwickeln. Lassen Sie sich zum Launch benachrichtigen.",
+    "og_title": "Das nächste SignAI entsteht gerade",
+    "crumb": "Download",
+    "pill": "Downloads pausiert",
+    "h1": "Das nächste SignAI <em>entsteht gerade.</em>",
+    "lead": "Unser erster Desktop-Prototyp hat gezeigt, dass Gebärdensprachübersetzung auf Satzebene mit einer normalen Webcam funktioniert. Wir haben ihn eingestellt, um alles in die nächste Version zu stecken: ein genaueres Modell, das Körper, Hände und Mund gemeinsam liest, und Produkte für echte Gespräche zwischen gehörlosen und hörenden Menschen.",
+    "cta_primary": "Zum Launch benachrichtigen",
+    "cta_secondary": "Zur Technologie",
+    "status_eyebrow": "Status",
+    "status_title": "Was gerade passiert.",
+    "cards": [
+      {"icon": "monitor", "tag": "Eingestellt", "tag_class": "tag-muted", "title": "SignAI Desktop für Windows", "text": "Der Prototyp der ersten Generation (v0.1 – v1.1, 2025). Er übersetzte kurze DGS-Sätze aus Webcam-Videos und wird nicht mehr angeboten.", "button": "Download pausiert"},
+      {"icon": "layers", "tag": "Im Training", "tag_class": "tag-live", "title": "Modell der nächsten Generation", "text": "Ein Drei-Strom-Modell, das Körper, Hände und Mund gemeinsam liest, trainiert auf dem Public DGS Corpus.", "link": "Zur Technologie", "href": "technology"},
+      {"icon": "spark", "tag": "In Entwicklung", "tag_class": "tag-live", "title": "Erste Produkte", "text": "Produkte für die alltägliche Kommunikation zwischen gehörlosen und hörenden Menschen. Melden Sie sich an, um zuerst davon zu erfahren.", "link": "Benachrichtigen", "href": "#updates"}
+    ]
+  },
+  "notfound": {
+    "title": "Seite nicht gefunden – SignAI",
+    "description": "Die gesuchte Seite existiert nicht. Weiter zu SignAI, KI für Gebärdensprachübersetzung in Echtzeit.",
+    "eyebrow": "Fehler 404",
+    "h1": "Diese Seite <em>gibt es nicht.</em>",
+    "lead": "Der Link ist vielleicht veraltet, oder die Seite wurde verschoben.",
+    "cta_primary": "Zur Startseite",
+    "cta_secondary": "Updates erhalten"
+  }
+}
