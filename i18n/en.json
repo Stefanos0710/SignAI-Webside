@@ -69,10 +69,10 @@
     "perks": ["Launch announcement", "Early access invitations", "Research milestones"]
   },
   "home": {
-    "title": "SignAI — AI Sign Language Translator | Sign Language to Text",
+    "title": "SignAI — AI Sign Language Translation in Real Time",
     "description": "SignAI builds AI that recognizes sign language from an ordinary camera and turns it into text. Starting with German Sign Language (DGS).",
     "og_title": "SignAI — Sign language, understood in real time",
-    "h1": "Sign language, understood in <em>real&nbsp;time.</em>",
+    "h1": "Sign language to text, in <em>real time.</em>",
     "lead": "SignAI watches sign language through an ordinary camera and writes out what was signed. We’re starting with German Sign Language and building toward products for the everyday conversations where no interpreter is around.",
     "cta_primary": "Notify me at launch",
     "cta_secondary": "Explore the technology",

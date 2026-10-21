@@ -6,7 +6,7 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <a class="brand brand-light" href="{{ home }}" aria-label="SignAI — {{ L.common.home }}">
-                    <img src="{{ url_for('static', filename='img/logo-96.png') }}" width="36" height="36" alt="" loading="lazy" class="brand-logo">
+                    <img src="{{ url_for('static', filename='img/logo-96.png') }}" width="36" height="36" alt="SignAI logo" loading="lazy" class="brand-logo">
                     <span class="brand-name">SignAI</span>
                 </a>
                 <p>{{ L.footer.tagline }}</p>
@@ -14,7 +14,7 @@
             </div>
             <div class="footer-cols">
                 <div class="footer-col">
-                    <h2 class="footer-title">{{ L.footer.col_signai }}</h2>
+                    <p class="footer-title">{{ L.footer.col_signai }}</p>
                     <ul role="list">
                         <li><a href="{{ home }}#mission">{{ L.footer.mission }}</a></li>
                         <li><a href="{{ home }}#roadmap">{{ L.footer.roadmap }}</a></li>
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h2 class="footer-title">{{ L.footer.col_research }}</h2>
+                    <p class="footer-title">{{ L.footer.col_research }}</p>
                     <ul role="list">
                         <li><a href="{{ page_url('technology', lang) }}">{{ L.footer.technology }}</a></li>
                         <li><a href="{{ page_url('technology', lang) }}#data">{{ L.footer.data }}</a></li>
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h2 class="footer-title">{{ L.footer.col_contact }}</h2>
+                    <p class="footer-title">{{ L.footer.col_contact }}</p>
                     <ul role="list">
                         <li><a href="mailto:hello@signai.dev?subject=Partnership%20%E2%80%94%20SignAI">{{ L.footer.partnerships }}</a></li>
                         <li><a href="mailto:hello@signai.dev?subject=Press%20%E2%80%94%20SignAI">{{ L.footer.press }}</a></li>

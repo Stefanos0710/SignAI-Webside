@@ -124,7 +124,7 @@
             {%- for point in H.mission.points %}
             <div class="mission-point{% if loop.index == 2 %} mission-point-accent{% endif %}">
                 <span class="flow-icon">{{ icon(point.icon) }}</span>
-                <h3 class="h5">{{ point.title }}</h3>
+                <p class="h5">{{ point.title }}</p>
                 <p>{{ point.text }}</p>
             </div>
             {%- endfor %}
@@ -172,7 +172,7 @@
                 {%- for s in H.tech.streams %}
                 <div class="stream{% if loop.last %} stream-fusion{% endif %}">
                     <span class="stream-icon">{{ icon(s.icon) }}</span>
-                    <div><h3 class="h5">{{ s.title }}</h3><p>{{ s.text }}</p></div>
+                    <div><p class="h5">{{ s.title }}</p><p>{{ s.text }}</p></div>
                 </div>
                 {%- endfor %}
             </div>
@@ -190,7 +190,7 @@
             {%- for p in H.principles['items'] %}
             <div class="principle">
                 <span class="principle-icon">{{ icon(p.icon) }}</span>
-                <h3 class="h5">{{ p.title }}</h3>
+                <p class="h5">{{ p.title }}</p>
                 <p>{{ p.text }}</p>
             </div>
             {%- endfor %}

@@ -176,7 +176,7 @@ button { font: inherit; }
     font-size: 1.08em;
     line-height: 0.9;
 }
-.hero-dark .display em { color: var(--accent); }
+.hero-dark .display em { color: var(--accent); white-space: nowrap; }
 
 .h2 {
     font-size: clamp(2rem, 3.8vw, 3.05rem);

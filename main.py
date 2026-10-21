@@ -18,7 +18,7 @@ app = Flask(__name__)
 SITE_URL = os.environ.get("SIGNAI_SITE_URL", "https://www.signai.dev").rstrip("/")
 
 # Bump to bust browser caches after changing CSS/JS.
-ASSET_VERSION = "2026.10.110"
+ASSET_VERSION = "2026.10.111"
 
 # Date used for sitemap <lastmod> and structured data dateModified.
 LAST_UPDATED = date(2026, 10, 21)
@@ -27,7 +27,8 @@ LAST_UPDATED = date(2026, 10, 21)
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 SUPABASE_TABLE = os.environ.get("SIGNAI_SIGNUP_TABLE", "signai_subscribers")
-SIGNUP_COOLDOWN = timedelta(minutes=30)
+SIGNUP_WINDOW = timedelta(minutes=30)
+SIGNUP_MAX = 2  # sign-ups per visitor per window
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
 NOTIFY_TO = os.environ.get("SIGNAI_NOTIFY_TO", "hello@signai.dev")
 NOTIFY_FROM = os.environ.get("SIGNAI_NOTIFY_FROM", "SignAI <noreply@signai.dev>")
@@ -150,16 +151,16 @@ def subscribe():
     if not (SUPABASE_URL and SUPABASE_KEY):
         return jsonify(ok=False, error="not_configured"), 503
 
-    # One sign-up per visitor (IP) every 30 minutes; only a hash of the IP is stored.
+    # At most SIGNUP_MAX sign-ups per visitor (IP) per window; only a hash of the IP is stored.
     ip = (request.headers.get("X-Forwarded-For") or request.remote_addr or "").split(",")[0].strip()
     ip_hash = hashlib.sha256(ip.encode()).hexdigest()
-    cutoff = (datetime.now(timezone.utc) - SIGNUP_COOLDOWN).isoformat()
+    cutoff = (datetime.now(timezone.utc) - SIGNUP_WINDOW).isoformat()
     try:
-        recent = supabase("GET", "signai_signup_limits", query={"ip_hash": f"eq.{ip_hash}", "last_at": f"gt.{cutoff}"})
+        recent = supabase("GET", "signai_signup_limits", query={"ip_hash": f"eq.{ip_hash}", "last_at": f"gt.{cutoff}", "select": "id"})
     except (urllib.error.URLError, TimeoutError, ValueError) as exc:
         app.logger.warning("Rate-limit lookup failed: %s", exc)
         return jsonify(ok=False, error="storage_failed"), 502
-    if recent:
+    if len(recent) >= SIGNUP_MAX:
         return jsonify(ok=False, error="rate_limited"), 429
 
     row = {
@@ -173,8 +174,7 @@ def subscribe():
         # representation: result is [] when the email already existed
         is_new = bool(supabase("POST", SUPABASE_TABLE, row, query={"on_conflict": "email"},
                                prefer="resolution=ignore-duplicates,return=representation"))
-        supabase("POST", "signai_signup_limits", {"ip_hash": ip_hash, "last_at": row["consented_at"]},
-                 query={"on_conflict": "ip_hash"}, prefer="resolution=merge-duplicates,return=minimal")
+        supabase("POST", "signai_signup_limits", {"ip_hash": ip_hash, "last_at": row["consented_at"]}, prefer="return=minimal")
     except (urllib.error.URLError, TimeoutError, ValueError) as exc:
         app.logger.warning("Sign-up storage failed: %s", exc)
         return jsonify(ok=False, error="storage_failed"), 502
