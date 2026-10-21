@@ -18,7 +18,7 @@ app = Flask(__name__)
 SITE_URL = os.environ.get("SIGNAI_SITE_URL", "https://www.signai.dev").rstrip("/")
 
 # Bump to bust browser caches after changing CSS/JS.
-ASSET_VERSION = "2026.10.111"
+ASSET_VERSION = "2026.10.112"
 
 # Date used for sitemap <lastmod> and structured data dateModified.
 LAST_UPDATED = date(2026, 10, 21)
@@ -52,8 +52,8 @@ ROUTES = {
     "download": {"en": "/download", "de": "/de/download", "fr": "/fr/telechargement", "es": "/es/descarga"},
 }
 
-# Sitemap priority and change frequency per page
-SITEMAP = {"home": ("1.0", "weekly"), "technology": ("0.8", "monthly"), "download": ("0.5", "monthly")}
+# Pages listed in the sitemap (Google ignores priority/changefreq, so only lastmod is emitted)
+SITEMAP = ("home", "technology", "download")
 
 I18N_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "i18n")
 
@@ -233,7 +233,7 @@ def robots():
 @app.route("/sitemap.xml")
 def sitemap():
     urls = []
-    for page, (priority, changefreq) in SITEMAP.items():
+    for page in SITEMAP:
         links = "\n".join(
             f'    <xhtml:link rel="alternate" hreflang="{code}" href="{SITE_URL}{page_url(page, code)}"/>'
             for code in LANGS
@@ -243,8 +243,6 @@ def sitemap():
                 "  <url>\n"
                 f"    <loc>{SITE_URL}{page_url(page, code)}</loc>\n"
                 f"    <lastmod>{LAST_UPDATED.isoformat()}</lastmod>\n"
-                f"    <changefreq>{changefreq}</changefreq>\n"
-                f"    <priority>{priority}</priority>\n"
                 f"{links}\n"
                 "  </url>"
             )
@@ -254,7 +252,7 @@ def sitemap():
         + "\n".join(urls)
         + "\n</urlset>\n"
     )
-    return Response(body, mimetype="application/xml")
+    return Response(body, mimetype="application/xml", headers={"Cache-Control": "public, max-age=3600"})
 
 
 @app.route("/site.webmanifest")
