@@ -60,6 +60,7 @@
     "success_title": "Ya estás en la lista.",
     "success": "Gracias. Te escribiremos cuando haya algo que contar.",
     "error_email": "Introduce un correo electrónico válido.",
+    "error_limit": "Acabas de registrarte. Espera 30 minutos antes de volver a intentarlo.",
     "error_consent": "Confirma que podemos guardar tu correo electrónico.",
     "error_generic": "Algo ha fallado. Inténtalo de nuevo o escribe a hello@signai.dev.",
     "fallback": "Se abrirá tu aplicación de correo con el mensaje ya escrito. Solo tienes que enviarlo.",

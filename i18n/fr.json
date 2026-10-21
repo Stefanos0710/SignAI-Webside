@@ -60,6 +60,7 @@
     "success_title": "Vous êtes inscrit·e.",
     "success": "Merci. Nous vous écrirons quand il y aura quelque chose à raconter.",
     "error_email": "Veuillez saisir une adresse e-mail valide.",
+    "error_limit": "Vous venez de vous inscrire. Veuillez patienter 30 minutes avant de réessayer.",
     "error_consent": "Veuillez confirmer que nous pouvons conserver votre adresse e-mail.",
     "error_generic": "Une erreur s’est produite. Veuillez réessayer ou écrire à hello@signai.dev.",
     "fallback": "Votre messagerie va s’ouvrir avec le message déjà rédigé. Il ne reste qu’à l’envoyer.",

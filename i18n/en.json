@@ -60,6 +60,7 @@
     "success_title": "You’re on the list.",
     "success": "Thanks. We’ll write when there’s something to tell.",
     "error_email": "Please enter a valid email address.",
+    "error_limit": "You just signed up. Please wait 30 minutes before trying again.",
     "error_consent": "Please confirm that we may store your email address.",
     "error_generic": "Something went wrong. Please try again, or write to hello@signai.dev.",
     "fallback": "Your email app will open with the message already written. Just press send.",

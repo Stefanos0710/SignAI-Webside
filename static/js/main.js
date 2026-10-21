@@ -235,6 +235,7 @@
                 return res.json().catch(function () { return {}; }).then(function (data) {
                     if (res.ok && data.ok) return done();
                     if (data.error === "invalid_email") return setStatus(form.dataset.msgEmail, true);
+                    if (data.error === "rate_limited") return setStatus(form.dataset.msgLimit, true);
                     if (data.error === "not_configured") return mailFallback();
                     setStatus(form.dataset.msgError, true);
                 });

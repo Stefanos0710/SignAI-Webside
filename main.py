@@ -1,9 +1,11 @@
+import hashlib
 import json
 import os
 import re
 import urllib.error
+import urllib.parse
 import urllib.request
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
 
 from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_from_directory, url_for
@@ -16,7 +18,7 @@ app = Flask(__name__)
 SITE_URL = os.environ.get("SIGNAI_SITE_URL", "https://www.signai.dev").rstrip("/")
 
 # Bump to bust browser caches after changing CSS/JS.
-ASSET_VERSION = "2026.10.109"
+ASSET_VERSION = "2026.10.110"
 
 # Date used for sitemap <lastmod> and structured data dateModified.
 LAST_UPDATED = date(2026, 10, 21)
@@ -25,6 +27,7 @@ LAST_UPDATED = date(2026, 10, 21)
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 SUPABASE_TABLE = os.environ.get("SIGNAI_SIGNUP_TABLE", "signai_subscribers")
+SIGNUP_COOLDOWN = timedelta(minutes=30)
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
 NOTIFY_TO = os.environ.get("SIGNAI_NOTIFY_TO", "hello@signai.dev")
 NOTIFY_FROM = os.environ.get("SIGNAI_NOTIFY_FROM", "SignAI <noreply@signai.dev>")
@@ -147,6 +150,18 @@ def subscribe():
     if not (SUPABASE_URL and SUPABASE_KEY):
         return jsonify(ok=False, error="not_configured"), 503
 
+    # One sign-up per visitor (IP) every 30 minutes; only a hash of the IP is stored.
+    ip = (request.headers.get("X-Forwarded-For") or request.remote_addr or "").split(",")[0].strip()
+    ip_hash = hashlib.sha256(ip.encode()).hexdigest()
+    cutoff = (datetime.now(timezone.utc) - SIGNUP_COOLDOWN).isoformat()
+    try:
+        recent = supabase("GET", "signai_signup_limits", query={"ip_hash": f"eq.{ip_hash}", "last_at": f"gt.{cutoff}"})
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        app.logger.warning("Rate-limit lookup failed: %s", exc)
+        return jsonify(ok=False, error="storage_failed"), 502
+    if recent:
+        return jsonify(ok=False, error="rate_limited"), 429
+
     row = {
         "email": email,
         "interest": interest,
@@ -154,27 +169,29 @@ def subscribe():
         "source": (data.get("source") or "")[:80],
         "consented_at": datetime.now(timezone.utc).isoformat(),
     }
-    req = urllib.request.Request(
-        f"{SUPABASE_URL}/rest/v1/{SUPABASE_TABLE}?on_conflict=email",
-        data=json.dumps(row).encode(),
-        method="POST",
-        headers={
-            "apikey": SUPABASE_KEY,
-            "Authorization": f"Bearer {SUPABASE_KEY}",
-            "Content-Type": "application/json",
-            # representation: body is [] when the email already existed
-            "Prefer": "resolution=ignore-duplicates,return=representation",
-        },
-    )
     try:
-        with urllib.request.urlopen(req, timeout=8) as resp:
-            is_new = bool(json.loads(resp.read() or b"[]"))
+        # representation: result is [] when the email already existed
+        is_new = bool(supabase("POST", SUPABASE_TABLE, row, query={"on_conflict": "email"},
+                               prefer="resolution=ignore-duplicates,return=representation"))
+        supabase("POST", "signai_signup_limits", {"ip_hash": ip_hash, "last_at": row["consented_at"]},
+                 query={"on_conflict": "ip_hash"}, prefer="resolution=merge-duplicates,return=minimal")
     except (urllib.error.URLError, TimeoutError, ValueError) as exc:
         app.logger.warning("Sign-up storage failed: %s", exc)
         return jsonify(ok=False, error="storage_failed"), 502
     if is_new:
         notify_signup(row)
     return jsonify(ok=True)
+
+
+def supabase(method, table, body=None, query=None, prefer="return=representation"):
+    """Call Supabase's REST API with the service key; returns the parsed JSON (or [])."""
+    url = f"{SUPABASE_URL}/rest/v1/{table}" + ("?" + urllib.parse.urlencode(query) if query else "")
+    req = urllib.request.Request(
+        url, method=method, data=json.dumps(body).encode() if body is not None else None,
+        headers={"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}",
+                 "Content-Type": "application/json", "Prefer": prefer})
+    with urllib.request.urlopen(req, timeout=8) as resp:
+        return json.loads(resp.read() or b"[]")
 
 
 def notify_signup(row):

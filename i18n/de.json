@@ -60,6 +60,7 @@
     "success_title": "Sie sind auf der Liste.",
     "success": "Danke. Wir melden uns, wenn es etwas zu erzählen gibt.",
     "error_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "error_limit": "Sie haben sich gerade angemeldet. Bitte warten Sie 30 Minuten, bevor Sie es erneut versuchen.",
     "error_consent": "Bitte bestätigen Sie, dass wir Ihre E-Mail-Adresse speichern dürfen.",
     "error_generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an hello@signai.dev.",
     "fallback": "Ihr E-Mail-Programm öffnet sich mit der fertigen Nachricht. Sie müssen nur noch auf Senden drücken.",
