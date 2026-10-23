@@ -1,0 +1,33 @@
+{
+  "name": "signai-website",
+  "version": "1.0.0",
+  "description": "SignAI website - Sign language recognition platform",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:analytics",
+    "build:analytics": "esbuild src/analytics.js --bundle --minify --outfile=static/js/analytics.js --format=iife",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stefanos0710/SignAI-Webside.git"
+  },
+  "keywords": [
+    "sign-language",
+    "accessibility",
+    "flask",
+    "signai"
+  ],
+  "author": "SignAI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stefanos0710/SignAI-Webside/issues"
+  },
+  "homepage": "https://github.com/Stefanos0710/SignAI-Webside#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
