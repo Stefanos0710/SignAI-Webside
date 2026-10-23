@@ -1,12 +1,17 @@
 /*
 
 !.gitignore
+!.vade-report
 !/README.md
+!/VERCEL_ANALYTICS.md
 !/main.py
 !/requirements.txt
 !/static/
 !/templates/
 !/i18n/
+!/package.json
+!/package-lock.json
+!/src/
 
 /.idea/
 
@@ -15,5 +20,8 @@
 __pycache__/
 .DS_Store
 Thumbs.db
+
+# Node modules
+node_modules/
 
 tools/.clip-cache/

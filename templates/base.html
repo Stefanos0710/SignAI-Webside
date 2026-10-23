@@ -129,11 +129,8 @@
       gtag('js', new Date());
       gtag('config', 'G-XGZYP8RGNC');
     </script>
-    {# Vercel Web Analytics #}
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    {# Vercel Web Analytics - Using @vercel/analytics package #}
+    <script src="{{ asset('js/analytics.js') }}" defer></script>
 </head>
 <body class="{% block body_class %}{% endblock %}" data-lang="{{ lang }}">
     <a class="skip-link" href="#main">{{ L.common.skip }}</a>
