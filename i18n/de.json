@@ -70,9 +70,9 @@
   },
   "home": {
     "title": "SignAI – KI-Übersetzer für Gebärdensprache (DGS) in Echtzeit",
-    "description": "SignAI entwickelt KI, die Gebärdensprache über eine normale Kamera erkennt und in Text übersetzt. Wir beginnen mit der Deutschen Gebärdensprache (DGS).",
+    "description": "SignAI erkennt Gebärdensprache mit jeder Kamera und übersetzt sie in Echtzeit in Text. Wir starten mit der Deutschen Gebärdensprache (DGS).",
     "og_title": "SignAI – Gebärdensprache, in Echtzeit verstanden",
-    "h1": "Gebärdensprache, verstanden in <em>Echtzeit.</em>",
+    "h1": "Gebärdensprache in Text, in <em>Echtzeit.</em>",
     "lead": "SignAI erkennt Gebärdensprache über eine ganz normale Kamera und schreibt mit, was gebärdet wurde. Wir beginnen mit der Deutschen Gebärdensprache und bauen Produkte für die alltäglichen Gespräche, bei denen niemand zum Dolmetschen da ist.",
     "cta_primary": "Zum Launch benachrichtigen",
     "cta_secondary": "Zur Technologie",

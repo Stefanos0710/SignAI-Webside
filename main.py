@@ -1,4 +1,5 @@
 import hashlib
+import http.client
 import json
 import os
 import re
@@ -18,7 +19,7 @@ app = Flask(__name__)
 SITE_URL = os.environ.get("SIGNAI_SITE_URL", "https://www.signai.dev").rstrip("/")
 
 # Bump to bust browser caches after changing CSS/JS.
-ASSET_VERSION = "2026.10.112"
+ASSET_VERSION = "2026.10.114"
 
 # Date used for sitemap <lastmod> and structured data dateModified.
 LAST_UPDATED = date(2026, 10, 21)
@@ -124,6 +125,8 @@ def instructions():
 # ---------------------------------------------------------------------------
 EMAIL_RE = re.compile(r"^[^@\s]{1,64}@[^@\s]{1,255}\.[^@\s]{2,63}$")
 INTERESTS = {"all", "updates", "research", "community", "organization", "press"}
+# URLError/timeouts/resets are OSError; HTTPException covers truncated responses; ValueError bad JSON.
+NETWORK_ERRORS = (OSError, http.client.HTTPException, ValueError)
 
 
 @app.route("/api/subscribe", methods=["POST"])
@@ -157,9 +160,10 @@ def subscribe():
     cutoff = (datetime.now(timezone.utc) - SIGNUP_WINDOW).isoformat()
     try:
         recent = supabase("GET", "signai_signup_limits", query={"ip_hash": f"eq.{ip_hash}", "last_at": f"gt.{cutoff}", "select": "id"})
-    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+    except NETWORK_ERRORS as exc:
+        # Fail open: a lost sign-up is worse than a missed rate limit.
         app.logger.warning("Rate-limit lookup failed: %s", exc)
-        return jsonify(ok=False, error="storage_failed"), 502
+        recent = []
     if len(recent) >= SIGNUP_MAX:
         return jsonify(ok=False, error="rate_limited"), 429
 
@@ -170,14 +174,20 @@ def subscribe():
         "source": (data.get("source") or "")[:80],
         "consented_at": datetime.now(timezone.utc).isoformat(),
     }
-    try:
-        # representation: result is [] when the email already existed
-        is_new = bool(supabase("POST", SUPABASE_TABLE, row, query={"on_conflict": "email"},
-                               prefer="resolution=ignore-duplicates,return=representation"))
-        supabase("POST", "signai_signup_limits", {"ip_hash": ip_hash, "last_at": row["consented_at"]}, prefer="return=minimal")
-    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
-        app.logger.warning("Sign-up storage failed: %s", exc)
+    for attempt in range(2):  # the insert is idempotent, so one retry on a transient error is safe
+        try:
+            # representation: result is [] when the email already existed
+            is_new = bool(supabase("POST", SUPABASE_TABLE, row, query={"on_conflict": "email"},
+                                   prefer="resolution=ignore-duplicates,return=representation"))
+            break
+        except NETWORK_ERRORS as exc:
+            app.logger.warning("Sign-up storage failed (attempt %d): %s", attempt + 1, exc)
+    else:
         return jsonify(ok=False, error="storage_failed"), 502
+    try:
+        supabase("POST", "signai_signup_limits", {"ip_hash": ip_hash, "last_at": row["consented_at"]}, prefer="return=minimal")
+    except NETWORK_ERRORS as exc:
+        app.logger.warning("Rate-limit insert failed: %s", exc)
     if is_new:
         notify_signup(row)
     return jsonify(ok=True)
@@ -210,7 +220,7 @@ def notify_signup(row):
     )
     try:
         urllib.request.urlopen(req, timeout=8).close()
-    except (urllib.error.URLError, TimeoutError) as exc:
+    except NETWORK_ERRORS as exc:
         app.logger.warning("Sign-up notification failed: %s", exc)
 
 
