@@ -19,7 +19,7 @@ app = Flask(__name__)
 SITE_URL = os.environ.get("SIGNAI_SITE_URL", "https://www.signai.dev").rstrip("/")
 
 # Bump to bust browser caches after changing CSS/JS.
-ASSET_VERSION = "2026.10.114"
+ASSET_VERSION = "2026.10.115"
 
 # Date used for sitemap <lastmod> and structured data dateModified.
 LAST_UPDATED = date(2026, 10, 21)

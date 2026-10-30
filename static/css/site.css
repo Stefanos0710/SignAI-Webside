@@ -764,21 +764,6 @@ rect.kp-box-mouth { fill: none; }
     .stream:hover { border-color: rgba(170, 182, 255, 0.35); }
     :is(.principle, .feature, .mission-point) :is(.principle-icon, .feature-icon, .flow-icon) { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
     :is(.principle, .feature, .mission-point):hover :is(.principle-icon, .feature-icon, .flow-icon) { transform: translateY(-3px) rotate(-6deg); }
-
-    /* Reading progress along the bottom of the header (browsers with scroll-driven animations) */
-    @supports (animation-timeline: scroll()) {
-        .site-header::after {
-            content: "";
-            position: absolute;
-            left: 0; right: 0; bottom: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--mint));
-            transform-origin: left;
-            animation: progress linear both;
-            animation-timeline: scroll(root);
-        }
-        @keyframes progress { from { transform: scaleX(0); } }
-    }
 }
 
 /* ---------- Split layouts ---------- */
